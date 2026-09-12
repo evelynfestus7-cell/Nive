@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta name="description" content="Nive - A premium reading experience." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <title>Nive Settings</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/settings.css" />
+</head>
+<body data-nav-active="settings">
+
+<!-- Navigation container (navigation.js will inject the bottom nav) -->
+<div id="nav-container" aria-hidden="false"></div>
+
+<main class="settings-main container" role="main" aria-labelledby="settingsHeading">
+  <header class="settings-header">
+    <h1 id="settingsHeading">Settings</h1>
+    <p class="muted">Control reading defaults, audio, offline and app preferences.</p>
+  </header>
+
+  <section class="settings-grid" aria-label="Settings options">
+    <div class="card" role="group" aria-labelledby="themeTitle">
+      <div class="card-left">
+        <div id="themeTitle" class="card-title">Theme</div>
+        <div class="card-desc">Choose app theme and reader default theme.</div>
+      </div>
+      <div class="card-right">
+        <div class="theme-options" role="radiogroup" aria-label="Theme">
+          <button class="theme-btn" data-theme="dark" aria-checked="false" type="button">Dark</button>
+          <button class="theme-btn" data-theme="light" aria-checked="false" type="button">Light</button>
+          <button class="theme-btn" data-theme="sepia" aria-checked="false" type="button">Sepia</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" role="group" aria-labelledby="readerDefaultsTitle">
+      <div class="card-left">
+        <div id="readerDefaultsTitle" class="card-title">Reader Defaults</div>
+        <div class="card-desc">Font size, line spacing and font family used when opening the reader.</div>
+      </div>
+      <div class="card-right">
+        <label class="field" for="readerFontSize">
+          <div class="label">Font Size</div>
+          <input id="readerFontSize" type="range" min="12" max="28" step="1" aria-valuemin="12" aria-valuemax="28">
+          <div class="small muted" id="readerFontSizeLabel" aria-live="polite"></div>
+        </label>
+
+        <label class="field" for="readerLineSpacing">
+          <div class="label">Line Spacing</div>
+          <input id="readerLineSpacing" type="range" min="1" max="2.4" step="0.1" aria-valuemin="1" aria-valuemax="2.4">
+          <div class="small muted" id="readerLineSpacingLabel" aria-live="polite"></div>
+        </label>
+
+        <label class="field" for="readerFontFamily">
+          <div class="label">Font Family</div>
+          <select id="readerFontFamily" aria-label="Reader font family">
+            <option value="serif">Serif</option>
+            <option value="sans-serif">Sans-serif</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="card" role="group" aria-labelledby="audioTitle">
+      <div class="card-left">
+        <div id="audioTitle" class="card-title">Audio</div>
+        <div class="card-desc">Narrator voice and background music while reading.</div>
+      </div>
+      <div class="card-right">
+        <label class="toggle-row">
+          <input id="narratorToggle" type="checkbox" aria-checked="false">
+          <span>Enable Narrator Voice</span>
+        </label>
+        <label class="toggle-row">
+          <input id="musicToggle" type="checkbox" aria-checked="false">
+          <span>Background Music</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="card" role="group" aria-labelledby="offlineTitle">
+      <div class="card-left">
+        <div id="offlineTitle" class="card-title">Offline</div>
+        <div class="card-desc">Allow downloads and offline reading.</div>
+      </div>
+      <div class="card-right">
+        <label class="toggle-row">
+          <input id="offlineToggle" type="checkbox" aria-checked="false">
+          <span>Enable Offline Downloads</span>
+        </label>
+        <button id="manageDownloads" class="btn small" type="button">Manage Downloads</button>
+      </div>
+    </div>
+
+    <div class="card" role="group" aria-labelledby="privacyTitle">
+      <div class="card-left">
+        <div id="privacyTitle" class="card-title">Privacy</div>
+        <div class="card-desc">Export or reset your local settings.</div>
+      </div>
+      <div class="card-right">
+        <button id="exportSettings" class="btn small ghost" type="button">Export Settings</button>
+        <button id="importSettings" class="btn small ghost" type="button">Import Settings</button>
+        <input id="importFile" type="file" accept="application/json" style="display:none" aria-hidden="true">
+        <button id="resetSettings" class="btn small danger" type="button">Reset to Defaults</button>
+      </div>
+    </div>
+
+    <div class="card" role="group" aria-labelledby="accountTitle">
+      <div class="card-left">
+        <div id="accountTitle" class="card-title">Account</div>
+        <div class="card-desc">Manage account and sign out.</div>
+      </div>
+      <div class="card-right">
+        <button id="manageAccount" class="btn small" type="button">Manage Profile</button>
+        <button id="logoutBtn" class="btn small ghost" type="button">Log Out</button>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="preview" aria-labelledby="previewTitle">
+    <div id="previewTitle" class="section-title">Reader Preview</div>
+    <div class="reader-preview" id="readerPreview" aria-live="polite">
+      <div class="preview-text">This is a live preview. Changes you make above update this preview immediately.</div>
+    </div>
+  </section>
+</main>
+
+
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/user.js?v=email-only-admin-20260903"></script>
+<script src="js/navigation.js"></script>
+<script src="js/settings.js?v=email-only-admin-20260903"></script>
+</body>
+</html>
+
+
+

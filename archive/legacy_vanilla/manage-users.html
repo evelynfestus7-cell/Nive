@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-admin-auth="checking">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Manage Nive users.">
+  <meta name="theme-color" content="#050505">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <title>Manage Users</title>
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    body { background:#0d0d0d; color:white; padding:20px; }
+    h1 { margin-bottom:20px; }
+    table { width:100%; border-collapse:collapse; }
+    th, td { padding:12px; text-align:left; border-bottom:1px solid #333; }
+    th { background:#181818; }
+    tr:hover { background:#202020; }
+    button { padding:6px 12px; border:none; border-radius:6px; cursor:pointer; }
+    .edit { background:#007bff; color:white; }
+    .delete { background:#dc3545; color:white; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:20px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <h1>Manage Users</h1>
+    <a class="btn ghost" href="admin-dashboard.html">Dashboard</a>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Progress</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="userTable">
+      <tr><td colspan="5" style="text-align:center;opacity:.7;">Loading users...</td></tr>
+    </tbody>
+  </table>
+
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/user.js?v=email-only-admin-20260903"></script>
+  <script src="js/admin-auth.js?v=email-only-admin-20260903"></script>
+  <script src="js/database.js"></script>
+  <script>
+    requireAdmin();
+
+    async function loadUsers() {
+      const users = await getUserList();
+      const table = document.getElementById("userTable");
+      table.innerHTML = "";
+
+      if (!users.length) {
+        table.innerHTML = '<tr><td colspan="5" style="text-align:center;opacity:.7;">No users found</td></tr>';
+        return;
+      }
+
+      users.forEach(user => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${escapeHtml(user.name)}</td>
+          <td>${escapeHtml(user.email)}</td>
+          <td>${Number(user.progress || 0)}</td>
+          <td>${escapeHtml(user.role || "reader")}</td>
+          <td>
+            <button class="edit" data-edit="${user.id}">Edit</button>
+            <button class="delete" data-delete="${user.id}">Delete</button>
+          </td>
+        `;
+        table.appendChild(row);
+      });
+    }
+
+    document.getElementById("userTable").addEventListener("click", async function (event) {
+      const edit = event.target.closest("[data-edit]");
+      const del = event.target.closest("[data-delete]");
+
+      if (edit) {
+        const role = prompt("Enter role: reader or admin", "reader");
+        if (!role) return;
+        await updateUser(edit.dataset.edit, { role: role.trim().toLowerCase() });
+        await loadUsers();
+      }
+
+      if (del) {
+        if (!confirm("Delete this user profile? Authentication credentials must be removed in Firebase Console.")) return;
+        await deleteUserRecord(del.dataset.delete);
+        await loadUsers();
+      }
+    });
+
+    window.addEventListener("adminReady", loadUsers);
+  </script>
+</body>
+</html>
+
+
+

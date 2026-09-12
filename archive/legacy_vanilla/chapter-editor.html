@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-admin-auth="checking">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <meta name="description" content="Nive - A premium reading experience." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<title>Chapter Editor</title>
+<link rel="stylesheet" href="css/global.css" />
+<style>
+  body{background:#050505;color:#fff;font-family:'Segoe UI',sans-serif;padding:36px;}
+  .card{background:rgba(255,255,255,0.04);backdrop-filter:blur(18px);border-radius:14px;padding:20px;margin-bottom:18px;}
+  input, textarea, select, button{width:100%;padding:10px;border-radius:10px;border:none;background:rgba(255,255,255,0.06);color:#fff;margin-top:8px;}
+  .row{display:flex;gap:12px;}
+  .row > *{flex:1;}
+  .muted{opacity:.7;font-size:13px;margin-top:6px;}
+  .small{font-size:13px;padding:8px;}
+  .inline{display:inline-block;width:auto;}
+  .preview{height:150px;background:#222 center/cover;border-radius:10px;margin-top:8px;}
+  .check-row{display:flex;gap:12px;align-items:center;margin-top:10px;}
+  .check-row input{width:auto;margin-top:0;}
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center;margin-bottom:18px;">Chapter Editor</h1>
+
+<div class="card">
+  <h2 style="margin:0 0 8px 0;">Add / Edit Chapter</h2>
+
+  <label class="muted">Chapter Title</label>
+  <input id="chapterTitle" placeholder="Chapter title">
+
+  <label class="muted">ID Generation Style</label>
+  <div class="row">
+    <select id="idStyle" class="small">
+      <option value="slug">Readable slug (e.g., coffee-confessions)</option>
+      <option value="branch">Branch style (1a, 1b, 2a)</option>
+      <option value="timestamp">Timestamp (fallback)</option>
+    </select>
+
+    <input id="manualId" placeholder="Manual override (optional)" class="small" />
+  </div>
+  <div class="muted">Generated ID: <span id="generatedId" style="font-weight:700">â€”</span></div>
+
+  <label class="muted" style="margin-top:12px;">Chapter Content</label>
+  <textarea id="chapterContent" rows="6" placeholder="Chapter content"></textarea>
+
+  <div class="row" style="margin-top:12px;">
+    <div>
+      <label class="muted">Scene Mood</label>
+      <select id="chapterMood" class="small">
+        <option value="black">Black</option>
+        <option value="crimson">Crimson</option>
+        <option value="purple">Purple</option>
+        <option value="blue">Blue</option>
+        <option value="sepia">Sepia</option>
+      </select>
+    </div>
+    <div>
+      <label class="muted">Scene Effect</label>
+      <select id="chapterEffect" class="small">
+        <option value="">None</option>
+        <option value="shake">Shake</option>
+        <option value="blood">Blood Flash</option>
+        <option value="shatter">Shatter</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <label class="muted"><input id="chapterCenter" type="checkbox"> Center text</label>
+    <label class="muted"><input id="chapterClimax" type="checkbox"> Climax ending</label>
+  </div>
+
+  <label class="muted" style="margin-top:12px;">Scene Art</label>
+  <input id="chapterArtFile" type="file" accept="image/*">
+  <div id="chapterArtPreview" class="preview"></div>
+  <div style="display:flex;gap:10px;margin-top:12px;">
+    <button id="useArtBtn" class="inline small">Use Art</button>
+    <button id="clearArtBtn" class="inline small">Clear Art</button>
+    <span id="artMsg" class="muted"></span>
+  </div>
+
+  <div style="display:flex;gap:10px;margin-top:12px;">
+    <button id="generateIdBtn" class="inline small">Generate ID</button>
+    <button id="saveChapterBtn" class="inline small">Save Chapter</button>
+    <button id="clearFormBtn" class="inline small">Clear</button>
+  </div>
+</div>
+
+<div class="card">
+  <h2 style="margin:0 0 8px 0;">Choices</h2>
+
+  <label class="muted">Choice Text</label>
+  <input id="choiceText" placeholder="Choice text">
+
+  <label class="muted">Next Chapter</label>
+  <select id="choiceNextSelect"></select>
+
+  <div style="display:flex;gap:10px;margin-top:12px;">
+    <button id="addChoiceBtn" class="inline small">Add Choice</button>
+  </div>
+
+  <div id="choicesList" style="margin-top:12px;"></div>
+</div>
+
+<div class="card">
+  <h2 style="margin:0 0 8px 0;">All Chapters</h2>
+  <div id="chaptersList"></div>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/user.js?v=email-only-admin-20260903"></script>
+<script src="js/admin-auth.js?v=email-only-admin-20260903"></script>
+<script src="js/database.js"></script>
+<script>requireAdmin();</script>
+<script src="js/chapter-editor.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta name="description" content="Nive - A premium reading experience." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <title>Nive Social</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/social.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+</head>
+<body data-nav-active="social">
+  <div id="nav-container"></div>
+
+  <main class="social-shell">
+    <header class="social-header">
+      <div>
+        <h1>Social & Community</h1>
+        <p>Find readers, follow them, browse curated reading lists, share coins, and chat.</p>
+      </div>
+      <div class="social-balance">
+        <span class="material-symbols-rounded">paid</span>
+        <span id="socialCoinBalance">0</span>
+      </div>
+    </header>
+
+    <section class="social-layout">
+      <div class="social-main">
+        <!-- Wattpad Style Reading Lists -->
+        <section class="card social-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Reading Lists</h2>
+              <p>Curated story playlists created by the Nive community.</p>
+            </div>
+            <button id="createListBtn" class="btn small" type="button">+ New List</button>
+          </div>
+          <div id="readingListsGrid" class="reading-lists-grid"></div>
+        </section>
+
+        <!-- Reader Search & Discovery -->
+        <section class="card social-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Find Readers</h2>
+              <p>Search by username, name, or reading style.</p>
+            </div>
+          </div>
+          <div class="social-search-row">
+            <span class="material-symbols-rounded">search</span>
+            <input id="userSearchInput" type="search" placeholder="Search usernames">
+          </div>
+          <div id="userResults" class="user-results"></div>
+        </section>
+
+        <!-- Following Circle -->
+        <section class="card social-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Following</h2>
+              <p>Your reader circle.</p>
+            </div>
+          </div>
+          <div id="followingList" class="compact-list"></div>
+        </section>
+      </div>
+
+      <aside class="social-side">
+        <!-- My Conversations / Messages -->
+        <section class="card social-panel">
+          <div class="panel-head">
+            <div>
+              <h2>My Messages</h2>
+              <p>Your active conversations with readers.</p>
+            </div>
+          </div>
+          <div id="recentConversationsList" class="compact-list"></div>
+        </section>
+
+        <!-- Direct Messaging (2 coins / msg) -->
+        <section class="card chat-panel">
+          <div class="panel-head">
+            <div>
+              <h2 id="chatTitle">Chat</h2>
+              <p id="chatSubtitle">Messages cost 2 coins each.</p>
+            </div>
+          </div>
+          <div id="chatThread" class="chat-thread"></div>
+          <form id="chatForm" class="chat-form">
+            <textarea id="chatInput" rows="3" maxlength="700" placeholder="Select a reader to chat"></textarea>
+            <button class="btn" type="submit">
+              <span class="material-symbols-rounded">send</span>
+              Send (2 🪙)
+            </button>
+          </form>
+        </section>
+
+        <section class="card social-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Blocked</h2>
+              <p>Blocked readers cannot be followed or messaged.</p>
+            </div>
+          </div>
+          <div id="blockedList" class="compact-list"></div>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+
+  
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/user.js"></script>
+  <script src="js/social.js"></script>
+  <script src="js/navigation.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      const social = window.NiveSocial;
+      let selectedUserId = null;
+
+      const coinBalance = document.getElementById("socialCoinBalance");
+      const searchInput = document.getElementById("userSearchInput");
+      const userResults = document.getElementById("userResults");
+      const followingList = document.getElementById("followingList");
+      const blockedList = document.getElementById("blockedList");
+      const readingListsGrid = document.getElementById("readingListsGrid");
+      const createListBtn = document.getElementById("createListBtn");
+      const chatTitle = document.getElementById("chatTitle");
+      const chatSubtitle = document.getElementById("chatSubtitle");
+      const chatThread = document.getElementById("chatThread");
+      const chatForm = document.getElementById("chatForm");
+      const chatInput = document.getElementById("chatInput");
+
+      function currentCoins() {
+        const user = typeof getUser === "function" ? getUser() : JSON.parse(localStorage.getItem("nive_user") || "{}");
+        return Number(user.coins || 0);
+      }
+
+      function refreshBalance() {
+        coinBalance.textContent = currentCoins();
+      }
+
+      function renderReadingLists() {
+        if (!readingListsGrid) return;
+        const lists = social.getReadingLists();
+        readingListsGrid.innerHTML = lists.length ? lists.map(list => `
+          <article class="reading-list-card">
+            <div>
+              <div class="reading-list-top">
+                <img src="${social.escapeHtml(list.avatar || 'assets/avatars/avatar1.png')}" alt="">
+                <span class="small muted">${social.escapeHtml(list.owner || 'Community')}</span>
+              </div>
+              <div class="reading-list-title">${social.escapeHtml(list.title)}</div>
+              <div class="reading-list-desc">${social.escapeHtml(list.description)}</div>
+            </div>
+            <div class="reading-list-meta">
+              <span>📖 ${(list.storyIds || []).length} stories</span>
+              <button class="btn small ghost" data-action="open-library" type="button">View List</button>
+            </div>
+          </article>
+        `).join("") : '<div class="empty-social">No reading lists created yet.</div>';
+      }
+
+      function userCard(user) {
+        const state = social.getState();
+        const isFollowing = state.following.includes(user.id);
+        return `
+          <article class="user-card" data-user-id="${user.id}">
+            <img loading="lazy" src="${social.escapeHtml(user.avatar)}" alt="">
+            <div class="user-card-body">
+              <div class="user-line">
+                <div>
+                  <strong>@${social.escapeHtml(user.username)}</strong>
+                  <span>${social.escapeHtml(user.displayName)}</span>
+                </div>
+                <button class="icon-action" data-action="chat" title="Chat (2 coins)" aria-label="Chat with @${social.escapeHtml(user.username)}">
+                  <span class="material-symbols-rounded">chat</span>
+                </button>
+              </div>
+              <p>${social.escapeHtml(user.bio)}</p>
+              <div class="user-meta">${user.followers + (isFollowing ? 1 : 0)} followers</div>
+              <div class="user-actions">
+                <button class="btn small ${isFollowing ? "ghost" : ""}" data-action="${isFollowing ? "unfollow" : "follow"}">${isFollowing ? "Unfollow" : "Follow"}</button>
+                <button class="btn small ghost" data-action="share">Share Coins</button>
+                <button class="btn small danger" data-action="block">Block</button>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      function renderUsers() {
+        const users = social.searchUsers(searchInput.value);
+        userResults.innerHTML = users.length
+          ? users.map(userCard).join("")
+          : '<div class="empty-social">No readers found.</div>';
+      }
+
+      function renderFollowing() {
+        const state = social.getState();
+        const users = state.following.map(id => social.getUserById(id)).filter(Boolean);
+        followingList.innerHTML = users.length
+          ? users.map(user => `
+            <div class="compact-user" data-user-id="${user.id}">
+              <img loading="lazy" src="${social.escapeHtml(user.avatar)}" alt="">
+              <div><strong>@${social.escapeHtml(user.username)}</strong><span>${social.escapeHtml(user.displayName)}</span></div>
+              <button class="icon-action" data-action="chat" aria-label="Chat"><span class="material-symbols-rounded">chat</span></button>
+            </div>
+          `).join("")
+          : '<div class="empty-social">Follow readers to build your circle.</div>';
+      }
+
+      function renderBlocked() {
+        const state = social.getState();
+        const users = state.blocked.map(id => social.getUserById(id)).filter(Boolean);
+        blockedList.innerHTML = users.length
+          ? users.map(user => `
+            <div class="compact-user" data-user-id="${user.id}">
+              <img loading="lazy" src="${social.escapeHtml(user.avatar)}" alt="">
+              <div><strong>@${social.escapeHtml(user.username)}</strong><span>Blocked</span></div>
+              <button class="btn small ghost" data-action="unblock">Unblock</button>
+            </div>
+          `).join("")
+          : '<div class="empty-social">No blocked readers.</div>';
+      }
+
+      function renderChat() {
+        const target = selectedUserId ? social.getUserById(selectedUserId) : null;
+        if (!target) {
+          chatTitle.textContent = "Chat";
+          chatSubtitle.textContent = "Messages cost " + social.MESSAGE_COST + " coins each.";
+          chatInput.placeholder = "Select a reader to chat";
+          chatInput.disabled = true;
+          chatThread.innerHTML = '<div class="empty-social">Choose a reader from search or following.</div>';
+          return;
+        }
+
+        chatTitle.textContent = "@" + target.username;
+        chatSubtitle.textContent = social.MESSAGE_COST + " coins per message";
+        chatInput.placeholder = "Message @" + target.username + " (" + social.MESSAGE_COST + " coins)";
+        chatInput.disabled = social.getState().blocked.includes(target.id);
+
+        const messages = social.getConversation(target.id);
+        chatThread.innerHTML = messages.length
+          ? messages.map(message => `
+            <div class="chat-bubble ${message.from === "me" ? "mine" : ""}">
+              <div>${social.escapeHtml(message.text)}</div>
+              <span>${social.escapeHtml(social.nowLabel(new Date(message.createdAt)))}${message.cost ? " • " + message.cost + " coins" : ""}</span>
+            </div>
+          `).join("")
+          : '<div class="empty-social">No messages yet. Send a message for ' + social.MESSAGE_COST + ' coins.</div>';
+        chatThread.scrollTop = chatThread.scrollHeight;
+      }
+
+      function renderRecentConversations() {
+        const root = document.getElementById("recentConversationsList");
+        if (!root) return;
+        const list = social.getConversationsList ? social.getConversationsList() : [];
+        if (!list.length) {
+          root.innerHTML = '<div class="empty-social">No past messages yet. Select a reader to chat!</div>';
+          return;
+        }
+        root.innerHTML = list.map(item => `
+          <div class="compact-user" data-user-id="${item.user.id}" style="cursor:pointer; ${selectedUserId === item.user.id ? 'border:1px solid var(--accent); background:rgba(213,0,0,.12);' : ''}">
+            <img loading="lazy" src="${social.escapeHtml(item.user.avatar)}" alt="">
+            <div style="flex:1; min-width:0;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <strong>@${social.escapeHtml(item.user.username)}</strong>
+                <span class="small muted" style="font-size:10px;">${social.escapeHtml(social.nowLabel(new Date(item.createdAt)))}</span>
+              </div>
+              <div class="small muted" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:11px; margin-top:2px;">${social.escapeHtml(item.lastMessage)}</div>
+            </div>
+            <button class="icon-action" data-action="chat" aria-label="Open Chat"><span class="material-symbols-rounded">chat</span></button>
+          </div>
+        `).join("");
+      }
+
+      function refreshAll() {
+        refreshBalance();
+        renderReadingLists();
+        renderUsers();
+        renderFollowing();
+        renderBlocked();
+        renderRecentConversations();
+        renderChat();
+      }
+
+
+      function handleAction(target) {
+        if (target.closest('[data-action="open-library"]')) {
+          location.href = "library.html";
+          return;
+        }
+
+        const action = target.closest("[data-action]");
+        const card = target.closest("[data-user-id]");
+        if (!action || !card) return;
+
+        const id = card.dataset.userId;
+        const type = action.dataset.action;
+        let result = null;
+
+        if (type === "follow") result = social.followUser(id);
+        if (type === "unfollow") result = social.unfollowUser(id);
+        if (type === "block") result = social.blockUser(id);
+        if (type === "unblock") result = social.unblockUser(id);
+        if (type === "chat") {
+          selectedUserId = id;
+          result = { ok: true, message: "Chat opened." };
+        }
+        if (type === "share") {
+          const amount = prompt("How many coins do you want to share?");
+          result = social.shareCoins(id, amount);
+        }
+
+        if (result) social.showNotice(result.message);
+        refreshAll();
+      }
+
+      if (createListBtn) {
+        createListBtn.addEventListener("click", () => {
+          const title = prompt("Enter a title for your Reading List:");
+          if (!title) return;
+          const desc = prompt("Enter a brief description (optional):") || "";
+          const res = social.createReadingList(title, desc);
+          social.showNotice(res.message);
+          refreshAll();
+        });
+      }
+
+      searchInput.addEventListener("input", renderUsers);
+      userResults.addEventListener("click", event => handleAction(event.target));
+      followingList.addEventListener("click", event => handleAction(event.target));
+      blockedList.addEventListener("click", event => handleAction(event.target));
+
+      chatForm.addEventListener("submit", event => {
+        event.preventDefault();
+        if (!selectedUserId) return social.showNotice("Select a reader first.");
+        const result = social.sendMessage(selectedUserId, chatInput.value);
+        social.showNotice(result.message);
+        if (result.ok) chatInput.value = "";
+        refreshAll();
+      });
+
+      window.addEventListener("userUpdated", refreshBalance);
+
+      document.addEventListener("DOMContentLoaded", () => {
+        refreshAll();
+        if (typeof renderNavigation === "function") renderNavigation("social");
+      });
+    })();
+  </script>
+</body>
+</html>
+

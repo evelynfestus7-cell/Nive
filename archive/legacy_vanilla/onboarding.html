@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Choose your Nive reader preferences.">
+  <meta name="theme-color" content="#050505">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png">
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <title>NIVE - Onboarding</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/onboarding.css">
+</head>
+<body>
+  <div class="background-glow"></div>
+  <main class="onboarding-shell">
+    <img loading="lazy" src="assets/logos/logo.png" alt="NIVE Logo" class="onboarding-logo">
+    <form id="onboardingForm" class="onboarding-panel">
+      <h1>Set Your Reading Mood</h1>
+      <p class="subtitle">Pick a face and a few genres so Nive can tune your first shelf.</p>
+
+      <input id="avatarInput" type="hidden" value="assets/avatars/avatar1.png">
+      <div class="onboarding-section">
+        <h2>Avatar</h2>
+        <div class="avatar-grid">
+          <button type="button" class="avatar-choice selected" data-avatar="assets/avatars/avatar1.png">
+            <img src="assets/avatars/avatar1.png" alt="Avatar option 1">
+          </button>
+          <button type="button" class="avatar-choice" data-avatar="assets/avatars/avatar2.png">
+            <img src="assets/avatars/avatar2.png" alt="Avatar option 2">
+          </button>
+          <button type="button" class="avatar-choice" data-avatar="assets/avatars/avatar3.png">
+            <img src="assets/avatars/avatar3.png" alt="Avatar option 3">
+          </button>
+          <button type="button" class="avatar-choice" data-avatar="assets/avatars/avatar4.png">
+            <img src="assets/avatars/avatar4.png" alt="Avatar option 4">
+          </button>
+        </div>
+      </div>
+
+      <div class="onboarding-section">
+        <h2>Genres</h2>
+        <div class="genre-grid">
+          <button type="button" data-genre="Fantasy">Fantasy</button>
+          <button type="button" data-genre="Mystery">Mystery</button>
+          <button type="button" data-genre="Romance">Romance</button>
+          <button type="button" data-genre="Sci-Fi">Sci-Fi</button>
+          <button type="button" data-genre="Adventure">Adventure</button>
+          <button type="button" data-genre="Drama">Drama</button>
+        </div>
+      </div>
+
+      <button type="submit" class="login-btn">Enter Nive</button>
+    </form>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/user.js?v=email-only-admin-20260903"></script>
+  <script src="js/onboarding.js?v=email-only-admin-20260903"></script>
+</body>
+</html>
+
+
+

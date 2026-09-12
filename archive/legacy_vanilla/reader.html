@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <meta name="description" content="Nive - A premium reading experience." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <title>Nive Reader</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/reader.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded">
+</head>
+<body class="theme-dark mood-black">
+  <div class="reader-bg" id="readerBg"></div>
+  <div class="reader-vignette"></div>
+  <div id="flash"></div>
+  <div id="shatterOverlay"></div>
+
+  <div id="sceneArt" class="hidden">
+    <img loading="lazy" alt="">
+  </div>
+
+  <main id="panel" class="reader-shell">
+    <header class="reader-header">
+      <a id="backLink" class="icon-btn" href="home.html" aria-label="Back">
+        <span class="material-symbols-rounded">arrow_back</span>
+      </a>
+
+      <div class="reader-title">
+        <div id="storyTitle">Reader</div>
+        <div id="chapterProgress">0%</div>
+      </div>
+
+      <div class="reader-tools" aria-label="Reader controls">
+        <button class="icon-btn" type="button" id="ttsVoiceBtn" title="Listen / Voice Narration" aria-label="Audio narration">
+          <span class="material-symbols-rounded">volume_up</span>
+        </button>
+        <button class="icon-btn" type="button" id="ambientSoundBtn" title="Ambient Soundscape" aria-label="Ambient music">
+          <span class="material-symbols-rounded">headphones</span>
+        </button>
+        <button class="icon-btn" type="button" data-reader-setting="theme" data-reader-value="dark" aria-label="Dark mode">
+          <span class="material-symbols-rounded">dark_mode</span>
+        </button>
+        <button class="icon-btn" type="button" data-reader-setting="theme" data-reader-value="sepia" aria-label="Sepia mode">
+          <span class="material-symbols-rounded">contrast</span>
+        </button>
+        <button class="icon-btn" type="button" data-reader-setting="fontSize" data-reader-value="22" aria-label="Large text">
+          <span class="material-symbols-rounded">text_increase</span>
+        </button>
+        <button class="icon-btn" type="button" data-reader-setting="fontSize" data-reader-value="17" aria-label="Small text">
+          <span class="material-symbols-rounded">text_decrease</span>
+        </button>
+        <button class="icon-btn" type="button" id="bookmarkBtn" aria-label="Bookmark">
+          <span class="material-symbols-rounded">bookmark</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="reader-content">
+      <div id="chapterContent" class="chapter-content">
+        <div class="text-card">Loading...</div>
+      </div>
+      <div id="choicesContainer" class="choices"></div>
+    </section>
+
+    <section id="chapterComments" class="chapter-community" aria-label="Chapter comments"></section>
+
+    <div id="tapHint" class="tap-hint">Tap anywhere to advance</div>
+  </main>
+
+  <section id="climax" class="climax">
+    <div>
+      <h1>The End</h1>
+      <button class="choice" type="button" id="readerReturnBtn">Return</button>
+    </div>
+  </section>
+
+  
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/user.js"></script>
+  <script src="js/offline.js"></script>
+  <script src="js/xp.js"></script>
+  <script src="js/database.js"></script>
+  <script src="js/achievements.js"></script>
+  <script src="js/social.js"></script>
+  <script src="js/reader.js"></script>
+</body>
+</html>

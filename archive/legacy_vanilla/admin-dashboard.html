@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html data-admin-auth="checking">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow" />
+  
+  <meta name="description" content="Nive - A premium reading experience." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<title>Nive Admin Dashboard</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <header class="admin-header">
+    <h1>Admin Dashboard</h1>
+  </header>
+
+  <!-- Quick Stats -->
+  <div class="admin-stats">
+    <div class="stat-card">
+      <h2 id="userCount">0</h2>
+      <p>Users</p>
+    </div>
+    <div class="stat-card">
+      <h2 id="storyCount">0</h2>
+      <p>Stories</p>
+    </div>
+    <div class="stat-card">
+      <h2 id="chapterCount">0</h2>
+      <p>Chapters</p>
+    </div>
+    <div class="stat-card">
+      <h2 id="reportCount">0</h2>
+      <p>Pending Reports</p>
+    </div>
+  </div>
+
+  <!-- Management Cards -->
+  <div class="admin-grid">
+    <div class="card" data-href="story-editor.html" role="button" tabindex="0">
+      <span class="material-symbols-rounded">add_circle</span>
+      Create Story
+    </div>
+    <div class="card" data-href="story-editor.html" role="button" tabindex="0" style="border: 1px solid rgba(168,85,247,0.4); background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(18,18,24,0.8));">
+      <span class="material-symbols-rounded" style="color: #a855f7;">auto_fix</span>
+      🤖 AI Story Importer (PDF/Word)
+    </div>
+    <div class="card" data-href="manage-stories.html" role="button" tabindex="0">
+      <span class="material-symbols-rounded">menu_book</span>
+      Manage Stories
+    </div>
+    <div class="card" data-href="manage-stories.html" role="button" tabindex="0">
+      <span class="material-symbols-rounded">library_books</span>
+      Manage Chapters
+    </div>
+    <div class="card" data-href="manage-users.html" role="button" tabindex="0">
+      <span class="material-symbols-rounded">group</span>
+      Manage Users
+    </div>
+  </div>
+
+  <!-- Moderation Queue -->
+  <div style="max-width: var(--max-width, 1000px); margin: 2rem auto; padding: 0 1rem;">
+    <h2 style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+      <span class="material-symbols-rounded">gavel</span> Content Moderation Reports
+    </h2>
+    <div id="reportsContainer" style="background: rgba(18,18,24,0.7); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem;">
+      <p style="color: rgba(255,255,255,0.5);">Loading reports...</p>
+    </div>
+  </div>
+
+  <div class="admin-logout">
+    <button id="seedFirestoreBtn" type="button">Seed Firestore</button>
+    <button id="logoutBtn" type="button">Logout</button>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/user.js?v=email-only-admin-20260903"></script>
+  <script src="js/admin-auth.js?v=email-only-admin-20260903"></script>
+  <script src="js/database.js"></script>
+  <script>
+    requireAdmin();
+
+    function logout() {
+      adminSignOut();
+    }
+
+    async function seedFirestore() {
+      try {
+        const result = await seedPackagedDataToFirestore();
+        showToast(`Seeded ${result.stories} stories and ${result.chapters} chapters.`);
+      } catch (error) {
+        showToast(error.message || "Could not seed Firestore.");
+      }
+    }
+
+    function renderReports(reports) {
+      const container = document.getElementById("reportsContainer");
+      document.getElementById("reportCount").textContent = reports.length;
+
+      if (!reports || reports.length === 0) {
+        container.innerHTML = '<p style="color: rgba(255,255,255,0.5); margin: 0;">No active user or content reports.</p>';
+        return;
+      }
+
+      container.innerHTML = reports.map(r => `
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+          <div>
+            <strong style="color: #fff; font-size: 0.95rem;">[${r.category}] Target: ${r.targetId} (${r.targetType})</strong>
+            <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin: 0.2rem 0 0;">Reported by ${r.reporterName || 'User'} • ${new Date(r.timestamp).toLocaleDateString()}</p>
+          </div>
+          <button class="btn small ghost" data-report-id="${r.id}" type="button">Dismiss Report</button>
+        </div>
+      `).join("");
+    }
+
+    function resolveReport(reportId) {
+      let reports = JSON.parse(localStorage.getItem("nive_reports") || "[]");
+      reports = reports.filter(r => r.id !== reportId);
+      localStorage.setItem("nive_reports", JSON.stringify(reports));
+      renderReports(reports);
+      showToast("Report resolved.");
+    }
+
+    document.querySelectorAll("[data-href]").forEach(card => {
+      const go = () => { location.href = card.dataset.href; };
+      card.addEventListener("click", go);
+      card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          go();
+        }
+      });
+    });
+
+    document.getElementById("seedFirestoreBtn")?.addEventListener("click", seedFirestore);
+    document.getElementById("logoutBtn")?.addEventListener("click", logout);
+    document.getElementById("reportsContainer")?.addEventListener("click", event => {
+      const button = event.target.closest("[data-report-id]");
+      if (button) resolveReport(button.dataset.reportId);
+    });
+
+    window.addEventListener("adminReady", async () => {
+      const users = typeof getUserList === "function" ? await getUserList() : [];
+      const stories = typeof getStories === "function" ? await getStories() : getCustomStories();
+      const chapters = getCustomChapters();
+
+      document.getElementById("userCount").textContent = users.length;
+      document.getElementById("storyCount").textContent = stories.length;
+      document.getElementById("chapterCount").textContent = Object.values(chapters).reduce((sum, arr) => sum + arr.length, 0);
+
+      const localReports = JSON.parse(localStorage.getItem("nive_reports") || "[]");
+      renderReports(localReports);
+    });
+  </script>
+</body>
+</html>
+
+
+

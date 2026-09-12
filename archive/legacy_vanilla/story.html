@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta name="description" content="Nive - A premium reading experience." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<meta name="description" content="Read this interactive story on Nive and make choices that change the outcome." />
+<title>Nive Story</title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/library.css">
+<link rel="stylesheet" href="css/story.css">
+</head>
+<body data-nav-active="library">
+
+<div class="banner" id="banner"></div>
+
+<div class="story-content">
+  <div class="story-genre" id="storyGenre"></div>
+  <div class="story-detail-title" id="storyTitle"></div>
+  <div class="author-row">
+    <div class="author-avatar" id="storyAuthorAvatar"></div>
+    <div class="author" id="storyAuthor"></div>
+  </div>
+  <div class="story-rating" id="storyRating"></div>
+
+  <div class="story-actions">
+    <button class="btn" id="startReadingBtn">Start Reading</button>
+    <button class="btn ghost" id="downloadBtn">Download</button>
+    <button class="btn ghost" id="addToLibraryBtn">Add To Library</button>
+    <button class="btn ghost" id="favoriteBtn">♡ Add To Favorites</button>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Description</div>
+    <div class="story-description" id="storyDescription"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Reading Progress</div>
+    <div class="story-progress"><div class="story-progress-fill" id="storyProgress"></div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Characters</div>
+    <div id="charactersList"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Chapters</div>
+    <div id="chaptersList"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Choices (Preview)</div>
+    <div class="story-choices" id="choicesContainer"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Achievements</div>
+    <div id="achievementsList"></div>
+  </div>
+</div>
+
+<div id="nav-container" aria-hidden="false"></div>
+
+
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/user.js"></script>
+<script src="js/offline.js"></script>
+<script src="js/database.js"></script>
+<script src="js/achievements.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/story.js"></script>
+</body>
+</html>

@@ -1,0 +1,1877 @@
+{
+    "river-of-names":  [
+                           {
+                               "id":  "start",
+                               "title":  "Chapter 1: The First Sign",
+                               "mood":  "black",
+                               "content":  "\u003cp\u003eEka arrives at the edge of a mystery: an archivist following a river ledger that records names before their owners arrive. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eSamuel offers help, but The Registrar has already moved pieces into place.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Follow the clue before anyone notices",
+                                                   "next":  "risk"
+                                               },
+                                               {
+                                                   "text":  "Question Samuel first",
+                                                   "next":  "trust"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "risk",
+                               "title":  "Chapter 2: The Dangerous Path",
+                               "mood":  "crimson",
+                               "content":  "\u003cp\u003eThe bold path leads Eka into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Registrar.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Take the object and run",
+                                                   "next":  "reveal"
+                                               },
+                                               {
+                                                   "text":  "Leave it and follow the footsteps",
+                                                   "next":  "reveal"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "trust",
+                               "title":  "Chapter 2: The Quiet Question",
+                               "mood":  "blue",
+                               "content":  "\u003cp\u003eSamuel does not answer directly. Instead, they tell Eka a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Registrar waits behind a gentle smile.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Believe the impossible detail",
+                                                   "next":  "reveal"
+                                               },
+                                               {
+                                                   "text":  "Set a trap at the meeting place",
+                                                   "next":  "reveal"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "reveal",
+                               "title":  "Chapter 3: What the World Hid",
+                               "mood":  "purple",
+                               "content":  "\u003cp\u003eThe secret opens like a wound. Eka learns that the threat is not only The Registrar, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Protect the truth quietly",
+                                                   "next":  "ending"
+                                               },
+                                               {
+                                                   "text":  "Reveal everything now",
+                                                   "next":  "ending"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "ending",
+                               "title":  "Chapter 4: The Choice That Remains",
+                               "mood":  "sepia",
+                               "content":  "\u003cp\u003eBy dawn, Eka understands the cost of the path taken. Samuel stands nearby, changed by loyalty, while The Registrar leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                               "choices":  [
+
+                                           ]
+                           }
+                       ],
+    "salt-and-roses":  [
+                           {
+                               "id":  "start",
+                               "title":  "Chapter 1: The First Sign",
+                               "mood":  "black",
+                               "content":  "\u003cp\u003eMina arrives at the edge of a mystery: a chef and a florist rebuilding a seaside market after a storm slowly rebuild each other too. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eLeo offers help, but Old Grief has already moved pieces into place.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Follow the clue before anyone notices",
+                                                   "next":  "risk"
+                                               },
+                                               {
+                                                   "text":  "Question Leo first",
+                                                   "next":  "trust"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "risk",
+                               "title":  "Chapter 2: The Dangerous Path",
+                               "mood":  "crimson",
+                               "content":  "\u003cp\u003eThe bold path leads Mina into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert Old Grief.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Take the object and run",
+                                                   "next":  "reveal"
+                                               },
+                                               {
+                                                   "text":  "Leave it and follow the footsteps",
+                                                   "next":  "reveal"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "trust",
+                               "title":  "Chapter 2: The Quiet Question",
+                               "mood":  "blue",
+                               "content":  "\u003cp\u003eLeo does not answer directly. Instead, they tell Mina a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where Old Grief waits behind a gentle smile.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Believe the impossible detail",
+                                                   "next":  "reveal"
+                                               },
+                                               {
+                                                   "text":  "Set a trap at the meeting place",
+                                                   "next":  "reveal"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "reveal",
+                               "title":  "Chapter 3: What the World Hid",
+                               "mood":  "purple",
+                               "content":  "\u003cp\u003eThe secret opens like a wound. Mina learns that the threat is not only Old Grief, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Protect the truth quietly",
+                                                   "next":  "ending"
+                                               },
+                                               {
+                                                   "text":  "Reveal everything now",
+                                                   "next":  "ending"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "ending",
+                               "title":  "Chapter 4: The Choice That Remains",
+                               "mood":  "sepia",
+                               "content":  "\u003cp\u003eBy dawn, Mina understands the cost of the path taken. Leo stands nearby, changed by loyalty, while Old Grief leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                               "choices":  [
+
+                                           ]
+                           }
+                       ],
+    "sable-witch":  [
+                        {
+                            "id":  "start",
+                            "title":  "Chapter 1: The First Sign",
+                            "mood":  "black",
+                            "content":  "\u003cp\u003eSable arrives at the edge of a mystery: a witch without a shadow hired to steal one from a king who has too many. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eFinch offers help, but King Orven has already moved pieces into place.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Follow the clue before anyone notices",
+                                                "next":  "risk"
+                                            },
+                                            {
+                                                "text":  "Question Finch first",
+                                                "next":  "trust"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "risk",
+                            "title":  "Chapter 2: The Dangerous Path",
+                            "mood":  "crimson",
+                            "content":  "\u003cp\u003eThe bold path leads Sable into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert King Orven.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Take the object and run",
+                                                "next":  "reveal"
+                                            },
+                                            {
+                                                "text":  "Leave it and follow the footsteps",
+                                                "next":  "reveal"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "trust",
+                            "title":  "Chapter 2: The Quiet Question",
+                            "mood":  "blue",
+                            "content":  "\u003cp\u003eFinch does not answer directly. Instead, they tell Sable a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where King Orven waits behind a gentle smile.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Believe the impossible detail",
+                                                "next":  "reveal"
+                                            },
+                                            {
+                                                "text":  "Set a trap at the meeting place",
+                                                "next":  "reveal"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "reveal",
+                            "title":  "Chapter 3: What the World Hid",
+                            "mood":  "purple",
+                            "content":  "\u003cp\u003eThe secret opens like a wound. Sable learns that the threat is not only King Orven, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Protect the truth quietly",
+                                                "next":  "ending"
+                                            },
+                                            {
+                                                "text":  "Reveal everything now",
+                                                "next":  "ending"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "ending",
+                            "title":  "Chapter 4: The Choice That Remains",
+                            "mood":  "sepia",
+                            "content":  "\u003cp\u003eBy dawn, Sable understands the cost of the path taken. Finch stands nearby, changed by loyalty, while King Orven leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                            "choices":  [
+
+                                        ]
+                        }
+                    ],
+    "ember-court":  [
+                        {
+                            "id":  "start",
+                            "title":  "Chapter 1: The First Sign",
+                            "mood":  "black",
+                            "content":  "\u003cp\u003eNara arrives at the edge of a mystery: a palace of fire-lit politics where a reluctant heir must decide whether mercy or power will save the realm. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003ePrince Vale offers help, but Lady Cinder has already moved pieces into place.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Follow the clue before anyone notices",
+                                                "next":  "risk"
+                                            },
+                                            {
+                                                "text":  "Question Prince Vale first",
+                                                "next":  "trust"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "risk",
+                            "title":  "Chapter 2: The Dangerous Path",
+                            "mood":  "crimson",
+                            "content":  "\u003cp\u003eThe bold path leads Nara into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert Lady Cinder.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Take the object and run",
+                                                "next":  "reveal"
+                                            },
+                                            {
+                                                "text":  "Leave it and follow the footsteps",
+                                                "next":  "reveal"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "trust",
+                            "title":  "Chapter 2: The Quiet Question",
+                            "mood":  "blue",
+                            "content":  "\u003cp\u003ePrince Vale does not answer directly. Instead, they tell Nara a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where Lady Cinder waits behind a gentle smile.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Believe the impossible detail",
+                                                "next":  "reveal"
+                                            },
+                                            {
+                                                "text":  "Set a trap at the meeting place",
+                                                "next":  "reveal"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "reveal",
+                            "title":  "Chapter 3: What the World Hid",
+                            "mood":  "purple",
+                            "content":  "\u003cp\u003eThe secret opens like a wound. Nara learns that the threat is not only Lady Cinder, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Protect the truth quietly",
+                                                "next":  "ending"
+                                            },
+                                            {
+                                                "text":  "Reveal everything now",
+                                                "next":  "ending"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "ending",
+                            "title":  "Chapter 4: The Choice That Remains",
+                            "mood":  "sepia",
+                            "content":  "\u003cp\u003eBy dawn, Nara understands the cost of the path taken. Prince Vale stands nearby, changed by loyalty, while Lady Cinder leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                            "choices":  [
+
+                                        ]
+                        }
+                    ],
+    "garden-of-glass":  [
+                            {
+                                "id":  "start",
+                                "title":  "Chapter 1: The First Sign",
+                                "mood":  "black",
+                                "content":  "\u003cp\u003eSage arrives at the edge of a mystery: an abandoned botanical dome where each mirrored flower reflects a different version of the truth. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eDr. Ivo offers help, but The Curator has already moved pieces into place.\u003c/p\u003e",
+                                "choices":  [
+                                                {
+                                                    "text":  "Follow the clue before anyone notices",
+                                                    "next":  "risk"
+                                                },
+                                                {
+                                                    "text":  "Question Dr. Ivo first",
+                                                    "next":  "trust"
+                                                }
+                                            ]
+                            },
+                            {
+                                "id":  "risk",
+                                "title":  "Chapter 2: The Dangerous Path",
+                                "mood":  "crimson",
+                                "content":  "\u003cp\u003eThe bold path leads Sage into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Curator.\u003c/p\u003e",
+                                "choices":  [
+                                                {
+                                                    "text":  "Take the object and run",
+                                                    "next":  "reveal"
+                                                },
+                                                {
+                                                    "text":  "Leave it and follow the footsteps",
+                                                    "next":  "reveal"
+                                                }
+                                            ]
+                            },
+                            {
+                                "id":  "trust",
+                                "title":  "Chapter 2: The Quiet Question",
+                                "mood":  "blue",
+                                "content":  "\u003cp\u003eDr. Ivo does not answer directly. Instead, they tell Sage a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Curator waits behind a gentle smile.\u003c/p\u003e",
+                                "choices":  [
+                                                {
+                                                    "text":  "Believe the impossible detail",
+                                                    "next":  "reveal"
+                                                },
+                                                {
+                                                    "text":  "Set a trap at the meeting place",
+                                                    "next":  "reveal"
+                                                }
+                                            ]
+                            },
+                            {
+                                "id":  "reveal",
+                                "title":  "Chapter 3: What the World Hid",
+                                "mood":  "purple",
+                                "content":  "\u003cp\u003eThe secret opens like a wound. Sage learns that the threat is not only The Curator, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                                "choices":  [
+                                                {
+                                                    "text":  "Protect the truth quietly",
+                                                    "next":  "ending"
+                                                },
+                                                {
+                                                    "text":  "Reveal everything now",
+                                                    "next":  "ending"
+                                                }
+                                            ]
+                            },
+                            {
+                                "id":  "ending",
+                                "title":  "Chapter 4: The Choice That Remains",
+                                "mood":  "sepia",
+                                "content":  "\u003cp\u003eBy dawn, Sage understands the cost of the path taken. Dr. Ivo stands nearby, changed by loyalty, while The Curator leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                                "choices":  [
+
+                                            ]
+                            }
+                        ],
+    "static-hearts":  [
+                          {
+                              "id":  "start",
+                              "title":  "Chapter 1: The First Sign",
+                              "mood":  "black",
+                              "content":  "\u003cp\u003eNova arrives at the edge of a mystery: two astronauts separated by a time-delay learn the static between transmissions is answering back. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eRen offers help, but The Delay has already moved pieces into place.\u003c/p\u003e",
+                              "choices":  [
+                                              {
+                                                  "text":  "Follow the clue before anyone notices",
+                                                  "next":  "risk"
+                                              },
+                                              {
+                                                  "text":  "Question Ren first",
+                                                  "next":  "trust"
+                                              }
+                                          ]
+                          },
+                          {
+                              "id":  "risk",
+                              "title":  "Chapter 2: The Dangerous Path",
+                              "mood":  "crimson",
+                              "content":  "\u003cp\u003eThe bold path leads Nova into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Delay.\u003c/p\u003e",
+                              "choices":  [
+                                              {
+                                                  "text":  "Take the object and run",
+                                                  "next":  "reveal"
+                                              },
+                                              {
+                                                  "text":  "Leave it and follow the footsteps",
+                                                  "next":  "reveal"
+                                              }
+                                          ]
+                          },
+                          {
+                              "id":  "trust",
+                              "title":  "Chapter 2: The Quiet Question",
+                              "mood":  "blue",
+                              "content":  "\u003cp\u003eRen does not answer directly. Instead, they tell Nova a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Delay waits behind a gentle smile.\u003c/p\u003e",
+                              "choices":  [
+                                              {
+                                                  "text":  "Believe the impossible detail",
+                                                  "next":  "reveal"
+                                              },
+                                              {
+                                                  "text":  "Set a trap at the meeting place",
+                                                  "next":  "reveal"
+                                              }
+                                          ]
+                          },
+                          {
+                              "id":  "reveal",
+                              "title":  "Chapter 3: What the World Hid",
+                              "mood":  "purple",
+                              "content":  "\u003cp\u003eThe secret opens like a wound. Nova learns that the threat is not only The Delay, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                              "choices":  [
+                                              {
+                                                  "text":  "Protect the truth quietly",
+                                                  "next":  "ending"
+                                              },
+                                              {
+                                                  "text":  "Reveal everything now",
+                                                  "next":  "ending"
+                                              }
+                                          ]
+                          },
+                          {
+                              "id":  "ending",
+                              "title":  "Chapter 4: The Choice That Remains",
+                              "mood":  "sepia",
+                              "content":  "\u003cp\u003eBy dawn, Nova understands the cost of the path taken. Ren stands nearby, changed by loyalty, while The Delay leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                              "choices":  [
+
+                                          ]
+                          }
+                      ],
+    "widow-of-mars":  [
+                          {
+                              "id":  "start",
+                              "title":  "Chapter 1: The First Sign",
+                              "mood":  "black",
+                              "content":  "\u003cp\u003eRhea arrives at the edge of a mystery: a terraformer on Mars receives messages from a spouse who died before the colony launched. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eUnit Cal offers help, but The Red Silence has already moved pieces into place.\u003c/p\u003e",
+                              "choices":  [
+                                              {
+                                                  "text":  "Follow the clue before anyone notices",
+                                                  "next":  "risk"
+                                              },
+                                              {
+                                                  "text":  "Question Unit Cal first",
+                                                  "next":  "trust"
+                                              }
+                                          ]
+                          },
+                          {
+                              "id":  "risk",
+                              "title":  "Chapter 2: The Dangerous Path",
+                              "mood":  "crimson",
+                              "content":  "\u003cp\u003eThe bold path leads Rhea into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Red Silence.\u003c/p\u003e",
+                              "choices":  [
+                                              {
+                                                  "text":  "Take the object and run",
+                                                  "next":  "reveal"
+                                              },
+                                              {
+                                                  "text":  "Leave it and follow the footsteps",
+                                                  "next":  "reveal"
+                                              }
+                                          ]
+                          },
+                          {
+                              "id":  "trust",
+                              "title":  "Chapter 2: The Quiet Question",
+                              "mood":  "blue",
+                              "content":  "\u003cp\u003eUnit Cal does not answer directly. Instead, they tell Rhea a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Red Silence waits behind a gentle smile.\u003c/p\u003e",
+                              "choices":  [
+                                              {
+                                                  "text":  "Believe the impossible detail",
+                                                  "next":  "reveal"
+                                              },
+                                              {
+                                                  "text":  "Set a trap at the meeting place",
+                                                  "next":  "reveal"
+                                              }
+                                          ]
+                          },
+                          {
+                              "id":  "reveal",
+                              "title":  "Chapter 3: What the World Hid",
+                              "mood":  "purple",
+                              "content":  "\u003cp\u003eThe secret opens like a wound. Rhea learns that the threat is not only The Red Silence, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                              "choices":  [
+                                              {
+                                                  "text":  "Protect the truth quietly",
+                                                  "next":  "ending"
+                                              },
+                                              {
+                                                  "text":  "Reveal everything now",
+                                                  "next":  "ending"
+                                              }
+                                          ]
+                          },
+                          {
+                              "id":  "ending",
+                              "title":  "Chapter 4: The Choice That Remains",
+                              "mood":  "sepia",
+                              "content":  "\u003cp\u003eBy dawn, Rhea understands the cost of the path taken. Unit Cal stands nearby, changed by loyalty, while The Red Silence leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                              "choices":  [
+
+                                          ]
+                          }
+                      ],
+    "ashes-of-aurelion":  [
+                              {
+                                  "id":  "start",
+                                  "title":  "Chapter 1: The First Sign",
+                                  "mood":  "black",
+                                  "content":  "\u003cp\u003eKeza arrives at the edge of a mystery: a fallen dragon city whose last map burns brighter whenever a lie is spoken. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eRook offers help, but General Vask has already moved pieces into place.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Follow the clue before anyone notices",
+                                                      "next":  "risk"
+                                                  },
+                                                  {
+                                                      "text":  "Question Rook first",
+                                                      "next":  "trust"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "risk",
+                                  "title":  "Chapter 2: The Dangerous Path",
+                                  "mood":  "crimson",
+                                  "content":  "\u003cp\u003eThe bold path leads Keza into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert General Vask.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Take the object and run",
+                                                      "next":  "reveal"
+                                                  },
+                                                  {
+                                                      "text":  "Leave it and follow the footsteps",
+                                                      "next":  "reveal"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "trust",
+                                  "title":  "Chapter 2: The Quiet Question",
+                                  "mood":  "blue",
+                                  "content":  "\u003cp\u003eRook does not answer directly. Instead, they tell Keza a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where General Vask waits behind a gentle smile.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Believe the impossible detail",
+                                                      "next":  "reveal"
+                                                  },
+                                                  {
+                                                      "text":  "Set a trap at the meeting place",
+                                                      "next":  "reveal"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "reveal",
+                                  "title":  "Chapter 3: What the World Hid",
+                                  "mood":  "purple",
+                                  "content":  "\u003cp\u003eThe secret opens like a wound. Keza learns that the threat is not only General Vask, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Protect the truth quietly",
+                                                      "next":  "ending"
+                                                  },
+                                                  {
+                                                      "text":  "Reveal everything now",
+                                                      "next":  "ending"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "ending",
+                                  "title":  "Chapter 4: The Choice That Remains",
+                                  "mood":  "sepia",
+                                  "content":  "\u003cp\u003eBy dawn, Keza understands the cost of the path taken. Rook stands nearby, changed by loyalty, while General Vask leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                                  "choices":  [
+
+                                              ]
+                              }
+                          ],
+    "citadel-under-rain":  [
+                               {
+                                   "id":  "start",
+                                   "title":  "Chapter 1: The First Sign",
+                                   "mood":  "black",
+                                   "content":  "\u003cp\u003eOri arrives at the edge of a mystery: a floating citadel where rain falls upward and every drop contains a stolen memory. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eKite offers help, but The Rainwardens has already moved pieces into place.\u003c/p\u003e",
+                                   "choices":  [
+                                                   {
+                                                       "text":  "Follow the clue before anyone notices",
+                                                       "next":  "risk"
+                                                   },
+                                                   {
+                                                       "text":  "Question Kite first",
+                                                       "next":  "trust"
+                                                   }
+                                               ]
+                               },
+                               {
+                                   "id":  "risk",
+                                   "title":  "Chapter 2: The Dangerous Path",
+                                   "mood":  "crimson",
+                                   "content":  "\u003cp\u003eThe bold path leads Ori into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Rainwardens.\u003c/p\u003e",
+                                   "choices":  [
+                                                   {
+                                                       "text":  "Take the object and run",
+                                                       "next":  "reveal"
+                                                   },
+                                                   {
+                                                       "text":  "Leave it and follow the footsteps",
+                                                       "next":  "reveal"
+                                                   }
+                                               ]
+                               },
+                               {
+                                   "id":  "trust",
+                                   "title":  "Chapter 2: The Quiet Question",
+                                   "mood":  "blue",
+                                   "content":  "\u003cp\u003eKite does not answer directly. Instead, they tell Ori a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Rainwardens waits behind a gentle smile.\u003c/p\u003e",
+                                   "choices":  [
+                                                   {
+                                                       "text":  "Believe the impossible detail",
+                                                       "next":  "reveal"
+                                                   },
+                                                   {
+                                                       "text":  "Set a trap at the meeting place",
+                                                       "next":  "reveal"
+                                                   }
+                                               ]
+                               },
+                               {
+                                   "id":  "reveal",
+                                   "title":  "Chapter 3: What the World Hid",
+                                   "mood":  "purple",
+                                   "content":  "\u003cp\u003eThe secret opens like a wound. Ori learns that the threat is not only The Rainwardens, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                                   "choices":  [
+                                                   {
+                                                       "text":  "Protect the truth quietly",
+                                                       "next":  "ending"
+                                                   },
+                                                   {
+                                                       "text":  "Reveal everything now",
+                                                       "next":  "ending"
+                                                   }
+                                               ]
+                               },
+                               {
+                                   "id":  "ending",
+                                   "title":  "Chapter 4: The Choice That Remains",
+                                   "mood":  "sepia",
+                                   "content":  "\u003cp\u003eBy dawn, Ori understands the cost of the path taken. Kite stands nearby, changed by loyalty, while The Rainwardens leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                                   "choices":  [
+
+                                               ]
+                               }
+                           ],
+    "golden-hour-heist":  [
+                              {
+                                  "id":  "start",
+                                  "title":  "Chapter 1: The First Sign",
+                                  "mood":  "black",
+                                  "content":  "\u003cp\u003eVera arrives at the edge of a mystery: a crew planning a museum heist that can only happen in the seven minutes before sunset. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eKit offers help, but The Collector has already moved pieces into place.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Follow the clue before anyone notices",
+                                                      "next":  "risk"
+                                                  },
+                                                  {
+                                                      "text":  "Question Kit first",
+                                                      "next":  "trust"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "risk",
+                                  "title":  "Chapter 2: The Dangerous Path",
+                                  "mood":  "crimson",
+                                  "content":  "\u003cp\u003eThe bold path leads Vera into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Collector.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Take the object and run",
+                                                      "next":  "reveal"
+                                                  },
+                                                  {
+                                                      "text":  "Leave it and follow the footsteps",
+                                                      "next":  "reveal"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "trust",
+                                  "title":  "Chapter 2: The Quiet Question",
+                                  "mood":  "blue",
+                                  "content":  "\u003cp\u003eKit does not answer directly. Instead, they tell Vera a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Collector waits behind a gentle smile.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Believe the impossible detail",
+                                                      "next":  "reveal"
+                                                  },
+                                                  {
+                                                      "text":  "Set a trap at the meeting place",
+                                                      "next":  "reveal"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "reveal",
+                                  "title":  "Chapter 3: What the World Hid",
+                                  "mood":  "purple",
+                                  "content":  "\u003cp\u003eThe secret opens like a wound. Vera learns that the threat is not only The Collector, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Protect the truth quietly",
+                                                      "next":  "ending"
+                                                  },
+                                                  {
+                                                      "text":  "Reveal everything now",
+                                                      "next":  "ending"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "ending",
+                                  "title":  "Chapter 4: The Choice That Remains",
+                                  "mood":  "sepia",
+                                  "content":  "\u003cp\u003eBy dawn, Vera understands the cost of the path taken. Kit stands nearby, changed by loyalty, while The Collector leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                                  "choices":  [
+
+                                              ]
+                              }
+                          ],
+    "velvet-alibi":  [
+                         {
+                             "id":  "start",
+                             "title":  "Chapter 1: The First Sign",
+                             "mood":  "black",
+                             "content":  "\u003cp\u003eDara arrives at the edge of a mystery: a jazz club murder where every witness tells the truth, but never in the right order. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eMiles offers help, but Madam Vesper has already moved pieces into place.\u003c/p\u003e",
+                             "choices":  [
+                                             {
+                                                 "text":  "Follow the clue before anyone notices",
+                                                 "next":  "risk"
+                                             },
+                                             {
+                                                 "text":  "Question Miles first",
+                                                 "next":  "trust"
+                                             }
+                                         ]
+                         },
+                         {
+                             "id":  "risk",
+                             "title":  "Chapter 2: The Dangerous Path",
+                             "mood":  "crimson",
+                             "content":  "\u003cp\u003eThe bold path leads Dara into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert Madam Vesper.\u003c/p\u003e",
+                             "choices":  [
+                                             {
+                                                 "text":  "Take the object and run",
+                                                 "next":  "reveal"
+                                             },
+                                             {
+                                                 "text":  "Leave it and follow the footsteps",
+                                                 "next":  "reveal"
+                                             }
+                                         ]
+                         },
+                         {
+                             "id":  "trust",
+                             "title":  "Chapter 2: The Quiet Question",
+                             "mood":  "blue",
+                             "content":  "\u003cp\u003eMiles does not answer directly. Instead, they tell Dara a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where Madam Vesper waits behind a gentle smile.\u003c/p\u003e",
+                             "choices":  [
+                                             {
+                                                 "text":  "Believe the impossible detail",
+                                                 "next":  "reveal"
+                                             },
+                                             {
+                                                 "text":  "Set a trap at the meeting place",
+                                                 "next":  "reveal"
+                                             }
+                                         ]
+                         },
+                         {
+                             "id":  "reveal",
+                             "title":  "Chapter 3: What the World Hid",
+                             "mood":  "purple",
+                             "content":  "\u003cp\u003eThe secret opens like a wound. Dara learns that the threat is not only Madam Vesper, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                             "choices":  [
+                                             {
+                                                 "text":  "Protect the truth quietly",
+                                                 "next":  "ending"
+                                             },
+                                             {
+                                                 "text":  "Reveal everything now",
+                                                 "next":  "ending"
+                                             }
+                                         ]
+                         },
+                         {
+                             "id":  "ending",
+                             "title":  "Chapter 4: The Choice That Remains",
+                             "mood":  "sepia",
+                             "content":  "\u003cp\u003eBy dawn, Dara understands the cost of the path taken. Miles stands nearby, changed by loyalty, while Madam Vesper leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                             "choices":  [
+
+                                         ]
+                         }
+                     ],
+    "oracle-of-owls":  [
+                           {
+                               "id":  "start",
+                               "title":  "Chapter 1: The First Sign",
+                               "mood":  "black",
+                               "content":  "\u003cp\u003eTara arrives at the edge of a mystery: a librarian translating owl calls that reveal which patron will vanish before dawn. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eMoss offers help, but The Night Index has already moved pieces into place.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Follow the clue before anyone notices",
+                                                   "next":  "risk"
+                                               },
+                                               {
+                                                   "text":  "Question Moss first",
+                                                   "next":  "trust"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "risk",
+                               "title":  "Chapter 2: The Dangerous Path",
+                               "mood":  "crimson",
+                               "content":  "\u003cp\u003eThe bold path leads Tara into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Night Index.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Take the object and run",
+                                                   "next":  "reveal"
+                                               },
+                                               {
+                                                   "text":  "Leave it and follow the footsteps",
+                                                   "next":  "reveal"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "trust",
+                               "title":  "Chapter 2: The Quiet Question",
+                               "mood":  "blue",
+                               "content":  "\u003cp\u003eMoss does not answer directly. Instead, they tell Tara a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Night Index waits behind a gentle smile.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Believe the impossible detail",
+                                                   "next":  "reveal"
+                                               },
+                                               {
+                                                   "text":  "Set a trap at the meeting place",
+                                                   "next":  "reveal"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "reveal",
+                               "title":  "Chapter 3: What the World Hid",
+                               "mood":  "purple",
+                               "content":  "\u003cp\u003eThe secret opens like a wound. Tara learns that the threat is not only The Night Index, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Protect the truth quietly",
+                                                   "next":  "ending"
+                                               },
+                                               {
+                                                   "text":  "Reveal everything now",
+                                                   "next":  "ending"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "ending",
+                               "title":  "Chapter 4: The Choice That Remains",
+                               "mood":  "sepia",
+                               "content":  "\u003cp\u003eBy dawn, Tara understands the cost of the path taken. Moss stands nearby, changed by loyalty, while The Night Index leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                               "choices":  [
+
+                                           ]
+                           }
+                       ],
+    "bone-compass":  [
+                         {
+                             "id":  "start",
+                             "title":  "Chapter 1: The First Sign",
+                             "mood":  "black",
+                             "content":  "\u003cp\u003eTess arrives at the edge of a mystery: an explorer following a compass carved from bone that points toward what the heart avoids. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eMakoa offers help, but The Northless Crew has already moved pieces into place.\u003c/p\u003e",
+                             "choices":  [
+                                             {
+                                                 "text":  "Follow the clue before anyone notices",
+                                                 "next":  "risk"
+                                             },
+                                             {
+                                                 "text":  "Question Makoa first",
+                                                 "next":  "trust"
+                                             }
+                                         ]
+                         },
+                         {
+                             "id":  "risk",
+                             "title":  "Chapter 2: The Dangerous Path",
+                             "mood":  "crimson",
+                             "content":  "\u003cp\u003eThe bold path leads Tess into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Northless Crew.\u003c/p\u003e",
+                             "choices":  [
+                                             {
+                                                 "text":  "Take the object and run",
+                                                 "next":  "reveal"
+                                             },
+                                             {
+                                                 "text":  "Leave it and follow the footsteps",
+                                                 "next":  "reveal"
+                                             }
+                                         ]
+                         },
+                         {
+                             "id":  "trust",
+                             "title":  "Chapter 2: The Quiet Question",
+                             "mood":  "blue",
+                             "content":  "\u003cp\u003eMakoa does not answer directly. Instead, they tell Tess a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Northless Crew waits behind a gentle smile.\u003c/p\u003e",
+                             "choices":  [
+                                             {
+                                                 "text":  "Believe the impossible detail",
+                                                 "next":  "reveal"
+                                             },
+                                             {
+                                                 "text":  "Set a trap at the meeting place",
+                                                 "next":  "reveal"
+                                             }
+                                         ]
+                         },
+                         {
+                             "id":  "reveal",
+                             "title":  "Chapter 3: What the World Hid",
+                             "mood":  "purple",
+                             "content":  "\u003cp\u003eThe secret opens like a wound. Tess learns that the threat is not only The Northless Crew, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                             "choices":  [
+                                             {
+                                                 "text":  "Protect the truth quietly",
+                                                 "next":  "ending"
+                                             },
+                                             {
+                                                 "text":  "Reveal everything now",
+                                                 "next":  "ending"
+                                             }
+                                         ]
+                         },
+                         {
+                             "id":  "ending",
+                             "title":  "Chapter 4: The Choice That Remains",
+                             "mood":  "sepia",
+                             "content":  "\u003cp\u003eBy dawn, Tess understands the cost of the path taken. Makoa stands nearby, changed by loyalty, while The Northless Crew leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                             "choices":  [
+
+                                         ]
+                         }
+                     ],
+    "winter-in-veloria":  [
+                              {
+                                  "id":  "start",
+                                  "title":  "Chapter 1: The First Sign",
+                                  "mood":  "black",
+                                  "content":  "\u003cp\u003eLiora arrives at the edge of a mystery: a winter kingdom where warmth is illegal and one baker hides a living flame in her oven. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eBram offers help, but The Frost Court has already moved pieces into place.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Follow the clue before anyone notices",
+                                                      "next":  "risk"
+                                                  },
+                                                  {
+                                                      "text":  "Question Bram first",
+                                                      "next":  "trust"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "risk",
+                                  "title":  "Chapter 2: The Dangerous Path",
+                                  "mood":  "crimson",
+                                  "content":  "\u003cp\u003eThe bold path leads Liora into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Frost Court.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Take the object and run",
+                                                      "next":  "reveal"
+                                                  },
+                                                  {
+                                                      "text":  "Leave it and follow the footsteps",
+                                                      "next":  "reveal"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "trust",
+                                  "title":  "Chapter 2: The Quiet Question",
+                                  "mood":  "blue",
+                                  "content":  "\u003cp\u003eBram does not answer directly. Instead, they tell Liora a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Frost Court waits behind a gentle smile.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Believe the impossible detail",
+                                                      "next":  "reveal"
+                                                  },
+                                                  {
+                                                      "text":  "Set a trap at the meeting place",
+                                                      "next":  "reveal"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "reveal",
+                                  "title":  "Chapter 3: What the World Hid",
+                                  "mood":  "purple",
+                                  "content":  "\u003cp\u003eThe secret opens like a wound. Liora learns that the threat is not only The Frost Court, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Protect the truth quietly",
+                                                      "next":  "ending"
+                                                  },
+                                                  {
+                                                      "text":  "Reveal everything now",
+                                                      "next":  "ending"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "ending",
+                                  "title":  "Chapter 4: The Choice That Remains",
+                                  "mood":  "sepia",
+                                  "content":  "\u003cp\u003eBy dawn, Liora understands the cost of the path taken. Bram stands nearby, changed by loyalty, while The Frost Court leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                                  "choices":  [
+
+                                              ]
+                              }
+                          ],
+    "moonlit-letters":  [
+                            {
+                                "id":  "start",
+                                "title":  "Chapter 1: The First Sign",
+                                "mood":  "black",
+                                "content":  "\u003cp\u003eElena arrives at the edge of a mystery: two strangers exchanging letters across time through a locked drawer in an old hotel. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eTomas offers help, but The Missing Year has already moved pieces into place.\u003c/p\u003e",
+                                "choices":  [
+                                                {
+                                                    "text":  "Follow the clue before anyone notices",
+                                                    "next":  "risk"
+                                                },
+                                                {
+                                                    "text":  "Question Tomas first",
+                                                    "next":  "trust"
+                                                }
+                                            ]
+                            },
+                            {
+                                "id":  "risk",
+                                "title":  "Chapter 2: The Dangerous Path",
+                                "mood":  "crimson",
+                                "content":  "\u003cp\u003eThe bold path leads Elena into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Missing Year.\u003c/p\u003e",
+                                "choices":  [
+                                                {
+                                                    "text":  "Take the object and run",
+                                                    "next":  "reveal"
+                                                },
+                                                {
+                                                    "text":  "Leave it and follow the footsteps",
+                                                    "next":  "reveal"
+                                                }
+                                            ]
+                            },
+                            {
+                                "id":  "trust",
+                                "title":  "Chapter 2: The Quiet Question",
+                                "mood":  "blue",
+                                "content":  "\u003cp\u003eTomas does not answer directly. Instead, they tell Elena a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Missing Year waits behind a gentle smile.\u003c/p\u003e",
+                                "choices":  [
+                                                {
+                                                    "text":  "Believe the impossible detail",
+                                                    "next":  "reveal"
+                                                },
+                                                {
+                                                    "text":  "Set a trap at the meeting place",
+                                                    "next":  "reveal"
+                                                }
+                                            ]
+                            },
+                            {
+                                "id":  "reveal",
+                                "title":  "Chapter 3: What the World Hid",
+                                "mood":  "purple",
+                                "content":  "\u003cp\u003eThe secret opens like a wound. Elena learns that the threat is not only The Missing Year, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                                "choices":  [
+                                                {
+                                                    "text":  "Protect the truth quietly",
+                                                    "next":  "ending"
+                                                },
+                                                {
+                                                    "text":  "Reveal everything now",
+                                                    "next":  "ending"
+                                                }
+                                            ]
+                            },
+                            {
+                                "id":  "ending",
+                                "title":  "Chapter 4: The Choice That Remains",
+                                "mood":  "sepia",
+                                "content":  "\u003cp\u003eBy dawn, Elena understands the cost of the path taken. Tomas stands nearby, changed by loyalty, while The Missing Year leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                                "choices":  [
+
+                                            ]
+                            }
+                        ],
+    "hollow-lane":  [
+                        {
+                            "id":  "start",
+                            "title":  "Chapter 1: The First Sign",
+                            "mood":  "black",
+                            "content":  "\u003cp\u003eNell arrives at the edge of a mystery: a quiet street where the houses rearrange themselves whenever someone tells a secret. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eOwen offers help, but House Seven has already moved pieces into place.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Follow the clue before anyone notices",
+                                                "next":  "risk"
+                                            },
+                                            {
+                                                "text":  "Question Owen first",
+                                                "next":  "trust"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "risk",
+                            "title":  "Chapter 2: The Dangerous Path",
+                            "mood":  "crimson",
+                            "content":  "\u003cp\u003eThe bold path leads Nell into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert House Seven.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Take the object and run",
+                                                "next":  "reveal"
+                                            },
+                                            {
+                                                "text":  "Leave it and follow the footsteps",
+                                                "next":  "reveal"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "trust",
+                            "title":  "Chapter 2: The Quiet Question",
+                            "mood":  "blue",
+                            "content":  "\u003cp\u003eOwen does not answer directly. Instead, they tell Nell a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where House Seven waits behind a gentle smile.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Believe the impossible detail",
+                                                "next":  "reveal"
+                                            },
+                                            {
+                                                "text":  "Set a trap at the meeting place",
+                                                "next":  "reveal"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "reveal",
+                            "title":  "Chapter 3: What the World Hid",
+                            "mood":  "purple",
+                            "content":  "\u003cp\u003eThe secret opens like a wound. Nell learns that the threat is not only House Seven, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Protect the truth quietly",
+                                                "next":  "ending"
+                                            },
+                                            {
+                                                "text":  "Reveal everything now",
+                                                "next":  "ending"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "ending",
+                            "title":  "Chapter 4: The Choice That Remains",
+                            "mood":  "sepia",
+                            "content":  "\u003cp\u003eBy dawn, Nell understands the cost of the path taken. Owen stands nearby, changed by loyalty, while House Seven leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                            "choices":  [
+
+                                        ]
+                        }
+                    ],
+    "starfall-academy":  [
+                             {
+                                 "id":  "start",
+                                 "title":  "Chapter 1: The First Sign",
+                                 "mood":  "black",
+                                 "content":  "\u003cp\u003eTali arrives at the edge of a mystery: a school for sky-mages where one student discovers the constellations are moving against them. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eBex offers help, but Headmaster Sol has already moved pieces into place.\u003c/p\u003e",
+                                 "choices":  [
+                                                 {
+                                                     "text":  "Follow the clue before anyone notices",
+                                                     "next":  "risk"
+                                                 },
+                                                 {
+                                                     "text":  "Question Bex first",
+                                                     "next":  "trust"
+                                                 }
+                                             ]
+                             },
+                             {
+                                 "id":  "risk",
+                                 "title":  "Chapter 2: The Dangerous Path",
+                                 "mood":  "crimson",
+                                 "content":  "\u003cp\u003eThe bold path leads Tali into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert Headmaster Sol.\u003c/p\u003e",
+                                 "choices":  [
+                                                 {
+                                                     "text":  "Take the object and run",
+                                                     "next":  "reveal"
+                                                 },
+                                                 {
+                                                     "text":  "Leave it and follow the footsteps",
+                                                     "next":  "reveal"
+                                                 }
+                                             ]
+                             },
+                             {
+                                 "id":  "trust",
+                                 "title":  "Chapter 2: The Quiet Question",
+                                 "mood":  "blue",
+                                 "content":  "\u003cp\u003eBex does not answer directly. Instead, they tell Tali a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where Headmaster Sol waits behind a gentle smile.\u003c/p\u003e",
+                                 "choices":  [
+                                                 {
+                                                     "text":  "Believe the impossible detail",
+                                                     "next":  "reveal"
+                                                 },
+                                                 {
+                                                     "text":  "Set a trap at the meeting place",
+                                                     "next":  "reveal"
+                                                 }
+                                             ]
+                             },
+                             {
+                                 "id":  "reveal",
+                                 "title":  "Chapter 3: What the World Hid",
+                                 "mood":  "purple",
+                                 "content":  "\u003cp\u003eThe secret opens like a wound. Tali learns that the threat is not only Headmaster Sol, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                                 "choices":  [
+                                                 {
+                                                     "text":  "Protect the truth quietly",
+                                                     "next":  "ending"
+                                                 },
+                                                 {
+                                                     "text":  "Reveal everything now",
+                                                     "next":  "ending"
+                                                 }
+                                             ]
+                             },
+                             {
+                                 "id":  "ending",
+                                 "title":  "Chapter 4: The Choice That Remains",
+                                 "mood":  "sepia",
+                                 "content":  "\u003cp\u003eBy dawn, Tali understands the cost of the path taken. Bex stands nearby, changed by loyalty, while Headmaster Sol leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                                 "choices":  [
+
+                                             ]
+                             }
+                         ],
+    "neon-oracle":  [
+                        {
+                            "id":  "start",
+                            "title":  "Chapter 1: The First Sign",
+                            "mood":  "black",
+                            "content":  "\u003cp\u003eIris arrives at the edge of a mystery: a rain-soaked megacity where a courier starts receiving predictions from a machine that should not know her name. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eJuno offers help, but The Oracle has already moved pieces into place.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Follow the clue before anyone notices",
+                                                "next":  "risk"
+                                            },
+                                            {
+                                                "text":  "Question Juno first",
+                                                "next":  "trust"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "risk",
+                            "title":  "Chapter 2: The Dangerous Path",
+                            "mood":  "crimson",
+                            "content":  "\u003cp\u003eThe bold path leads Iris into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Oracle.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Take the object and run",
+                                                "next":  "reveal"
+                                            },
+                                            {
+                                                "text":  "Leave it and follow the footsteps",
+                                                "next":  "reveal"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "trust",
+                            "title":  "Chapter 2: The Quiet Question",
+                            "mood":  "blue",
+                            "content":  "\u003cp\u003eJuno does not answer directly. Instead, they tell Iris a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Oracle waits behind a gentle smile.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Believe the impossible detail",
+                                                "next":  "reveal"
+                                            },
+                                            {
+                                                "text":  "Set a trap at the meeting place",
+                                                "next":  "reveal"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "reveal",
+                            "title":  "Chapter 3: What the World Hid",
+                            "mood":  "purple",
+                            "content":  "\u003cp\u003eThe secret opens like a wound. Iris learns that the threat is not only The Oracle, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                            "choices":  [
+                                            {
+                                                "text":  "Protect the truth quietly",
+                                                "next":  "ending"
+                                            },
+                                            {
+                                                "text":  "Reveal everything now",
+                                                "next":  "ending"
+                                            }
+                                        ]
+                        },
+                        {
+                            "id":  "ending",
+                            "title":  "Chapter 4: The Choice That Remains",
+                            "mood":  "sepia",
+                            "content":  "\u003cp\u003eBy dawn, Iris understands the cost of the path taken. Juno stands nearby, changed by loyalty, while The Oracle leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                            "choices":  [
+
+                                        ]
+                        }
+                    ],
+    "paper-sun":  [
+                      {
+                          "id":  "start",
+                          "title":  "Chapter 1: The First Sign",
+                          "mood":  "black",
+                          "content":  "\u003cp\u003eIma arrives at the edge of a mystery: a family-owned print shop fighting closure after an old poster predicts tomorrow\u0027s headline. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eBayo offers help, but The Deadline has already moved pieces into place.\u003c/p\u003e",
+                          "choices":  [
+                                          {
+                                              "text":  "Follow the clue before anyone notices",
+                                              "next":  "risk"
+                                          },
+                                          {
+                                              "text":  "Question Bayo first",
+                                              "next":  "trust"
+                                          }
+                                      ]
+                      },
+                      {
+                          "id":  "risk",
+                          "title":  "Chapter 2: The Dangerous Path",
+                          "mood":  "crimson",
+                          "content":  "\u003cp\u003eThe bold path leads Ima into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Deadline.\u003c/p\u003e",
+                          "choices":  [
+                                          {
+                                              "text":  "Take the object and run",
+                                              "next":  "reveal"
+                                          },
+                                          {
+                                              "text":  "Leave it and follow the footsteps",
+                                              "next":  "reveal"
+                                          }
+                                      ]
+                      },
+                      {
+                          "id":  "trust",
+                          "title":  "Chapter 2: The Quiet Question",
+                          "mood":  "blue",
+                          "content":  "\u003cp\u003eBayo does not answer directly. Instead, they tell Ima a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Deadline waits behind a gentle smile.\u003c/p\u003e",
+                          "choices":  [
+                                          {
+                                              "text":  "Believe the impossible detail",
+                                              "next":  "reveal"
+                                          },
+                                          {
+                                              "text":  "Set a trap at the meeting place",
+                                              "next":  "reveal"
+                                          }
+                                      ]
+                      },
+                      {
+                          "id":  "reveal",
+                          "title":  "Chapter 3: What the World Hid",
+                          "mood":  "purple",
+                          "content":  "\u003cp\u003eThe secret opens like a wound. Ima learns that the threat is not only The Deadline, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                          "choices":  [
+                                          {
+                                              "text":  "Protect the truth quietly",
+                                              "next":  "ending"
+                                          },
+                                          {
+                                              "text":  "Reveal everything now",
+                                              "next":  "ending"
+                                          }
+                                      ]
+                      },
+                      {
+                          "id":  "ending",
+                          "title":  "Chapter 4: The Choice That Remains",
+                          "mood":  "sepia",
+                          "content":  "\u003cp\u003eBy dawn, Ima understands the cost of the path taken. Bayo stands nearby, changed by loyalty, while The Deadline leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                          "choices":  [
+
+                                      ]
+                      }
+                  ],
+    "red-thread-market":  [
+                              {
+                                  "id":  "start",
+                                  "title":  "Chapter 1: The First Sign",
+                                  "mood":  "black",
+                                  "content":  "\u003cp\u003eAyo arrives at the edge of a mystery: a night market where a red thread ties every buyer to the person they will betray. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eMei offers help, but The Thread Seller has already moved pieces into place.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Follow the clue before anyone notices",
+                                                      "next":  "risk"
+                                                  },
+                                                  {
+                                                      "text":  "Question Mei first",
+                                                      "next":  "trust"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "risk",
+                                  "title":  "Chapter 2: The Dangerous Path",
+                                  "mood":  "crimson",
+                                  "content":  "\u003cp\u003eThe bold path leads Ayo into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Thread Seller.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Take the object and run",
+                                                      "next":  "reveal"
+                                                  },
+                                                  {
+                                                      "text":  "Leave it and follow the footsteps",
+                                                      "next":  "reveal"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "trust",
+                                  "title":  "Chapter 2: The Quiet Question",
+                                  "mood":  "blue",
+                                  "content":  "\u003cp\u003eMei does not answer directly. Instead, they tell Ayo a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Thread Seller waits behind a gentle smile.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Believe the impossible detail",
+                                                      "next":  "reveal"
+                                                  },
+                                                  {
+                                                      "text":  "Set a trap at the meeting place",
+                                                      "next":  "reveal"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "reveal",
+                                  "title":  "Chapter 3: What the World Hid",
+                                  "mood":  "purple",
+                                  "content":  "\u003cp\u003eThe secret opens like a wound. Ayo learns that the threat is not only The Thread Seller, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Protect the truth quietly",
+                                                      "next":  "ending"
+                                                  },
+                                                  {
+                                                      "text":  "Reveal everything now",
+                                                      "next":  "ending"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "ending",
+                                  "title":  "Chapter 4: The Choice That Remains",
+                                  "mood":  "sepia",
+                                  "content":  "\u003cp\u003eBy dawn, Ayo understands the cost of the path taken. Mei stands nearby, changed by loyalty, while The Thread Seller leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                                  "choices":  [
+
+                                              ]
+                              }
+                          ],
+    "blackwater-signal":  [
+                              {
+                                  "id":  "start",
+                                  "title":  "Chapter 1: The First Sign",
+                                  "mood":  "black",
+                                  "content":  "\u003cp\u003eMaya arrives at the edge of a mystery: a coastal town where every radio turns on at midnight with the voice of someone presumed dead. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eDetective Oris offers help, but The Signal has already moved pieces into place.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Follow the clue before anyone notices",
+                                                      "next":  "risk"
+                                                  },
+                                                  {
+                                                      "text":  "Question Detective Oris first",
+                                                      "next":  "trust"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "risk",
+                                  "title":  "Chapter 2: The Dangerous Path",
+                                  "mood":  "crimson",
+                                  "content":  "\u003cp\u003eThe bold path leads Maya into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Signal.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Take the object and run",
+                                                      "next":  "reveal"
+                                                  },
+                                                  {
+                                                      "text":  "Leave it and follow the footsteps",
+                                                      "next":  "reveal"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "trust",
+                                  "title":  "Chapter 2: The Quiet Question",
+                                  "mood":  "blue",
+                                  "content":  "\u003cp\u003eDetective Oris does not answer directly. Instead, they tell Maya a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Signal waits behind a gentle smile.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Believe the impossible detail",
+                                                      "next":  "reveal"
+                                                  },
+                                                  {
+                                                      "text":  "Set a trap at the meeting place",
+                                                      "next":  "reveal"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "reveal",
+                                  "title":  "Chapter 3: What the World Hid",
+                                  "mood":  "purple",
+                                  "content":  "\u003cp\u003eThe secret opens like a wound. Maya learns that the threat is not only The Signal, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                                  "choices":  [
+                                                  {
+                                                      "text":  "Protect the truth quietly",
+                                                      "next":  "ending"
+                                                  },
+                                                  {
+                                                      "text":  "Reveal everything now",
+                                                      "next":  "ending"
+                                                  }
+                                              ]
+                              },
+                              {
+                                  "id":  "ending",
+                                  "title":  "Chapter 4: The Choice That Remains",
+                                  "mood":  "sepia",
+                                  "content":  "\u003cp\u003eBy dawn, Maya understands the cost of the path taken. Detective Oris stands nearby, changed by loyalty, while The Signal leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                                  "choices":  [
+
+                                              ]
+                              }
+                          ],
+    "blue-hour-cafe":  [
+                           {
+                               "id":  "start",
+                               "title":  "Chapter 1: The First Sign",
+                               "mood":  "black",
+                               "content":  "\u003cp\u003eNico arrives at the edge of a mystery: a cafe that opens for exactly one hour each night to people who regret the same choice. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eAri offers help, but The Last Order has already moved pieces into place.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Follow the clue before anyone notices",
+                                                   "next":  "risk"
+                                               },
+                                               {
+                                                   "text":  "Question Ari first",
+                                                   "next":  "trust"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "risk",
+                               "title":  "Chapter 2: The Dangerous Path",
+                               "mood":  "crimson",
+                               "content":  "\u003cp\u003eThe bold path leads Nico into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Last Order.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Take the object and run",
+                                                   "next":  "reveal"
+                                               },
+                                               {
+                                                   "text":  "Leave it and follow the footsteps",
+                                                   "next":  "reveal"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "trust",
+                               "title":  "Chapter 2: The Quiet Question",
+                               "mood":  "blue",
+                               "content":  "\u003cp\u003eAri does not answer directly. Instead, they tell Nico a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Last Order waits behind a gentle smile.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Believe the impossible detail",
+                                                   "next":  "reveal"
+                                               },
+                                               {
+                                                   "text":  "Set a trap at the meeting place",
+                                                   "next":  "reveal"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "reveal",
+                               "title":  "Chapter 3: What the World Hid",
+                               "mood":  "purple",
+                               "content":  "\u003cp\u003eThe secret opens like a wound. Nico learns that the threat is not only The Last Order, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                               "choices":  [
+                                               {
+                                                   "text":  "Protect the truth quietly",
+                                                   "next":  "ending"
+                                               },
+                                               {
+                                                   "text":  "Reveal everything now",
+                                                   "next":  "ending"
+                                               }
+                                           ]
+                           },
+                           {
+                               "id":  "ending",
+                               "title":  "Chapter 4: The Choice That Remains",
+                               "mood":  "sepia",
+                               "content":  "\u003cp\u003eBy dawn, Nico understands the cost of the path taken. Ari stands nearby, changed by loyalty, while The Last Order leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                               "choices":  [
+
+                                           ]
+                           }
+                       ],
+    "clockwork-saints":  [
+                             {
+                                 "id":  "start",
+                                 "title":  "Chapter 1: The First Sign",
+                                 "mood":  "black",
+                                 "content":  "\u003cp\u003ePax arrives at the edge of a mystery: a city of brass saints where a mechanic finds a prayer engine counting down to disaster. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eSister Anni offers help, but The Brass Bishop has already moved pieces into place.\u003c/p\u003e",
+                                 "choices":  [
+                                                 {
+                                                     "text":  "Follow the clue before anyone notices",
+                                                     "next":  "risk"
+                                                 },
+                                                 {
+                                                     "text":  "Question Sister Anni first",
+                                                     "next":  "trust"
+                                                 }
+                                             ]
+                             },
+                             {
+                                 "id":  "risk",
+                                 "title":  "Chapter 2: The Dangerous Path",
+                                 "mood":  "crimson",
+                                 "content":  "\u003cp\u003eThe bold path leads Pax into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert The Brass Bishop.\u003c/p\u003e",
+                                 "choices":  [
+                                                 {
+                                                     "text":  "Take the object and run",
+                                                     "next":  "reveal"
+                                                 },
+                                                 {
+                                                     "text":  "Leave it and follow the footsteps",
+                                                     "next":  "reveal"
+                                                 }
+                                             ]
+                             },
+                             {
+                                 "id":  "trust",
+                                 "title":  "Chapter 2: The Quiet Question",
+                                 "mood":  "blue",
+                                 "content":  "\u003cp\u003eSister Anni does not answer directly. Instead, they tell Pax a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where The Brass Bishop waits behind a gentle smile.\u003c/p\u003e",
+                                 "choices":  [
+                                                 {
+                                                     "text":  "Believe the impossible detail",
+                                                     "next":  "reveal"
+                                                 },
+                                                 {
+                                                     "text":  "Set a trap at the meeting place",
+                                                     "next":  "reveal"
+                                                 }
+                                             ]
+                             },
+                             {
+                                 "id":  "reveal",
+                                 "title":  "Chapter 3: What the World Hid",
+                                 "mood":  "purple",
+                                 "content":  "\u003cp\u003eThe secret opens like a wound. Pax learns that the threat is not only The Brass Bishop, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                                 "choices":  [
+                                                 {
+                                                     "text":  "Protect the truth quietly",
+                                                     "next":  "ending"
+                                                 },
+                                                 {
+                                                     "text":  "Reveal everything now",
+                                                     "next":  "ending"
+                                                 }
+                                             ]
+                             },
+                             {
+                                 "id":  "ending",
+                                 "title":  "Chapter 4: The Choice That Remains",
+                                 "mood":  "sepia",
+                                 "content":  "\u003cp\u003eBy dawn, Pax understands the cost of the path taken. Sister Anni stands nearby, changed by loyalty, while The Brass Bishop leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                                 "choices":  [
+
+                                             ]
+                             }
+                         ],
+    "last-train-elysium":  [
+                               {
+                                   "id":  "start",
+                                   "title":  "Chapter 1: The First Sign",
+                                   "mood":  "black",
+                                   "content":  "\u003cp\u003eNoa arrives at the edge of a mystery: a luxury train crossing the rings of Saturn with one passenger who was never born. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eCaptain Senn offers help, but Passenger Zero has already moved pieces into place.\u003c/p\u003e",
+                                   "choices":  [
+                                                   {
+                                                       "text":  "Follow the clue before anyone notices",
+                                                       "next":  "risk"
+                                                   },
+                                                   {
+                                                       "text":  "Question Captain Senn first",
+                                                       "next":  "trust"
+                                                   }
+                                               ]
+                               },
+                               {
+                                   "id":  "risk",
+                                   "title":  "Chapter 2: The Dangerous Path",
+                                   "mood":  "crimson",
+                                   "content":  "\u003cp\u003eThe bold path leads Noa into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert Passenger Zero.\u003c/p\u003e",
+                                   "choices":  [
+                                                   {
+                                                       "text":  "Take the object and run",
+                                                       "next":  "reveal"
+                                                   },
+                                                   {
+                                                       "text":  "Leave it and follow the footsteps",
+                                                       "next":  "reveal"
+                                                   }
+                                               ]
+                               },
+                               {
+                                   "id":  "trust",
+                                   "title":  "Chapter 2: The Quiet Question",
+                                   "mood":  "blue",
+                                   "content":  "\u003cp\u003eCaptain Senn does not answer directly. Instead, they tell Noa a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where Passenger Zero waits behind a gentle smile.\u003c/p\u003e",
+                                   "choices":  [
+                                                   {
+                                                       "text":  "Believe the impossible detail",
+                                                       "next":  "reveal"
+                                                   },
+                                                   {
+                                                       "text":  "Set a trap at the meeting place",
+                                                       "next":  "reveal"
+                                                   }
+                                               ]
+                               },
+                               {
+                                   "id":  "reveal",
+                                   "title":  "Chapter 3: What the World Hid",
+                                   "mood":  "purple",
+                                   "content":  "\u003cp\u003eThe secret opens like a wound. Noa learns that the threat is not only Passenger Zero, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                                   "choices":  [
+                                                   {
+                                                       "text":  "Protect the truth quietly",
+                                                       "next":  "ending"
+                                                   },
+                                                   {
+                                                       "text":  "Reveal everything now",
+                                                       "next":  "ending"
+                                                   }
+                                               ]
+                               },
+                               {
+                                   "id":  "ending",
+                                   "title":  "Chapter 4: The Choice That Remains",
+                                   "mood":  "sepia",
+                                   "content":  "\u003cp\u003eBy dawn, Noa understands the cost of the path taken. Captain Senn stands nearby, changed by loyalty, while Passenger Zero leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                                   "choices":  [
+
+                                               ]
+                               }
+                           ],
+    "diamond-protocol":  [
+                             {
+                                 "id":  "start",
+                                 "title":  "Chapter 1: The First Sign",
+                                 "mood":  "black",
+                                 "content":  "\u003cp\u003eZed arrives at the edge of a mystery: a cybersecurity analyst discovering that a stolen diamond is actually a key to a sleeping satellite. The first sign is small enough to ignore and strange enough to change everything.\u003c/p\u003e\u003cp\u003eAlma offers help, but Glass has already moved pieces into place.\u003c/p\u003e",
+                                 "choices":  [
+                                                 {
+                                                     "text":  "Follow the clue before anyone notices",
+                                                     "next":  "risk"
+                                                 },
+                                                 {
+                                                     "text":  "Question Alma first",
+                                                     "next":  "trust"
+                                                 }
+                                             ]
+                             },
+                             {
+                                 "id":  "risk",
+                                 "title":  "Chapter 2: The Dangerous Path",
+                                 "mood":  "crimson",
+                                 "content":  "\u003cp\u003eThe bold path leads Zed into a hidden chamber of warnings, half-truths, and one object that should not exist.\u003c/p\u003e\u003cp\u003eTaking it could reveal the truth, but it will also alert Glass.\u003c/p\u003e",
+                                 "choices":  [
+                                                 {
+                                                     "text":  "Take the object and run",
+                                                     "next":  "reveal"
+                                                 },
+                                                 {
+                                                     "text":  "Leave it and follow the footsteps",
+                                                     "next":  "reveal"
+                                                 }
+                                             ]
+                             },
+                             {
+                                 "id":  "trust",
+                                 "title":  "Chapter 2: The Quiet Question",
+                                 "mood":  "blue",
+                                 "content":  "\u003cp\u003eAlma does not answer directly. Instead, they tell Zed a story with one detail that sounds impossible.\u003c/p\u003e\u003cp\u003eThe detail points to a meeting place where Glass waits behind a gentle smile.\u003c/p\u003e",
+                                 "choices":  [
+                                                 {
+                                                     "text":  "Believe the impossible detail",
+                                                     "next":  "reveal"
+                                                 },
+                                                 {
+                                                     "text":  "Set a trap at the meeting place",
+                                                     "next":  "reveal"
+                                                 }
+                                             ]
+                             },
+                             {
+                                 "id":  "reveal",
+                                 "title":  "Chapter 3: What the World Hid",
+                                 "mood":  "purple",
+                                 "content":  "\u003cp\u003eThe secret opens like a wound. Zed learns that the threat is not only Glass, but the fear that made everyone obey.\u003c/p\u003e\u003cp\u003eA final choice remains: protect the truth quietly or let it burn bright enough for everyone to see.\u003c/p\u003e",
+                                 "choices":  [
+                                                 {
+                                                     "text":  "Protect the truth quietly",
+                                                     "next":  "ending"
+                                                 },
+                                                 {
+                                                     "text":  "Reveal everything now",
+                                                     "next":  "ending"
+                                                 }
+                                             ]
+                             },
+                             {
+                                 "id":  "ending",
+                                 "title":  "Chapter 4: The Choice That Remains",
+                                 "mood":  "sepia",
+                                 "content":  "\u003cp\u003eBy dawn, Zed understands the cost of the path taken. Alma stands nearby, changed by loyalty, while Glass leaves one last warning.\u003c/p\u003e\u003cp\u003eThe story ends, but the world is no longer willing to stay quiet.\u003c/p\u003e",
+                                 "choices":  [
+
+                                             ]
+                             }
+                         ]
+}

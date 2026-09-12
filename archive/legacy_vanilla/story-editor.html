@@ -1,0 +1,355 @@
+﻿<!doctype html>
+<html lang="en" data-admin-auth="checking">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="description" content="Nive - A premium reading experience." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<meta name="description" content="Edit stories in the Nive admin panel." />
+<title>Story Editor</title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/story-editor.css">
+</head>
+<body>
+  <div class="editor-wrap">
+    <h1>Story Editor</h1>
+    <div class="editor-grid">
+      <div class="editor-card">
+        <label for="title">Title</label>
+        <input id="title" type="text" placeholder="Title">
+
+        <label for="author" style="margin-top:10px">Author</label>
+        <input id="author" type="text" placeholder="Author">
+
+        <label for="genre" style="margin-top:10px">Genre</label>
+        <input id="genre" type="text" placeholder="Genre">
+
+        <label for="rating" style="margin-top:10px">Rating</label>
+        <select id="rating"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+
+        <label for="description" style="margin-top:10px">Description</label>
+        <textarea id="description" placeholder="Short description"></textarea>
+
+        <div class="editor-toggles">
+          <label class="editor-toggle"><input type="checkbox" id="featured">Featured story</label>
+          <label class="editor-toggle"><input type="checkbox" id="premium">Premium story</label>
+        </div>
+
+        <div class="editor-row" style="margin-top:14px">
+          <button id="saveBtn" class="btn-primary">Save</button>
+          <button id="chaptersBtn" class="btn-secondary">Chapters & Choices</button>
+          <button id="backBtn" class="btn-secondary">Back</button>
+          <button id="deleteBtn" class="btn-danger">Delete</button>
+          <span id="status" class="muted"></span>
+        </div>
+      </div>
+
+      <!-- AI Document Import Card -->
+      <div class="editor-card" style="border: 1px solid rgba(168,85,247,0.4); background: linear-gradient(145deg, rgba(168,85,247,0.1), rgba(18,18,24,0.9));">
+        <h3 style="margin-top:0; font-size: 1.1rem; color: #a855f7; display: flex; align-items: center; gap: 8px;">
+          🤖 AI Document Auto-Importer
+        </h3>
+        <p class="muted" style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 12px;">
+          Upload a selectable-text PDF, Word (.docx), Text, or Markdown manuscript. The importer extracts readable text, creates chapters, and generates simple choice branches.
+        </p>
+
+        <label for="aiDocFile" style="font-size: 0.85rem; font-weight: 700;">Upload PDF / Word / Text Manuscript</label>
+        <input id="aiDocFile" type="file" accept=".pdf,.docx,.txt,.md" style="margin-top: 6px; width: 100%;">
+
+        <div style="margin-top: 14px;">
+          <button id="aiImportBtn" class="btn-primary" style="width: 100%; background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); font-weight: 700; padding: 10px;">
+            ✨ Auto-Extract Chapters & Choice Branches
+          </button>
+        </div>
+        <div id="aiStatusMsg" class="muted" style="font-size: 0.85rem; margin-top: 8px; min-height: 1.2rem;"></div>
+
+        <hr style="margin: 16px 0; border: 0; border-top: 1px solid rgba(255,255,255,0.1);">
+
+        <label>Book Cover</label>
+        <div id="coverPreview" class="editor-preview"></div>
+        <input id="coverFile" type="file" accept="image/*">
+        <div class="editor-row" style="margin-top:8px">
+          <button id="uploadCover" class="btn-primary">Use Cover</button>
+          <button id="clearCover" class="btn-secondary">Clear</button>
+          <span id="coverMsg" class="muted"></span>
+        </div>
+
+        <hr>
+
+        <label>Book Banner</label>
+        <div id="bannerPreview" class="editor-preview"></div>
+        <input id="bannerFile" type="file" accept="image/*">
+        <div class="editor-row" style="margin-top:8px">
+          <button id="uploadBanner" class="btn-primary">Use Banner</button>
+          <button id="clearBanner" class="btn-secondary">Clear</button>
+          <span id="bannerMsg" class="muted"></span>
+        </div>
+
+        <hr>
+
+        <label>Author Avatar</label>
+        <div id="avatarPreview" class="editor-preview avatar-preview"></div>
+        <input id="avatarFile" type="file" accept="image/*">
+        <div class="editor-row" style="margin-top:8px">
+          <button id="uploadAvatar" class="btn-primary">Use Avatar</button>
+          <button id="clearAvatar" class="btn-secondary">Clear</button>
+          <span id="avatarMsg" class="muted"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/user.js?v=email-only-admin-20260903"></script>
+<script src="js/admin-auth.js?v=email-only-admin-20260903"></script>
+<script src="js/database.js"></script>
+<script src="js/stories.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  if (window.pdfjsLib) {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+<script src="js/ai-story-parser.js?v=email-only-admin-20260903"></script>
+<script>requireAdmin();</script>
+<script>
+(function(){
+  const params = new URLSearchParams(location.search);
+  let storyId = params.get('id') || createStoryId();
+
+  const refs = {
+    title: document.getElementById('title'),
+    author: document.getElementById('author'),
+    genre: document.getElementById('genre'),
+    rating: document.getElementById('rating'),
+    description: document.getElementById('description'),
+    featured: document.getElementById('featured'),
+    premium: document.getElementById('premium'),
+    status: document.getElementById('status'),
+    coverPreview: document.getElementById('coverPreview'),
+    bannerPreview: document.getElementById('bannerPreview'),
+    avatarPreview: document.getElementById('avatarPreview')
+  };
+
+  const imageState = { cover:'', banner:'', avatar:'' };
+  let baseStory = null;
+
+  function createStoryId(){
+    return 'custom-' + Date.now().toString(36) + '-' + Math.floor(Math.random() * 1000000);
+  }
+
+  function getStoriesSafe(){
+    try { return getCustomStories(); }
+    catch(e){ return JSON.parse(localStorage.getItem('nive_custom_stories') || '[]'); }
+  }
+
+  function saveStoriesSafe(list){
+    try { saveCustomStories(list); }
+    catch(e){ localStorage.setItem('nive_custom_stories', JSON.stringify(list || [])); }
+  }
+
+  function getDeletedSafe(){
+    try { return getDeletedStories(); }
+    catch(e){ return JSON.parse(localStorage.getItem('nive_deleted_stories') || '[]'); }
+  }
+
+  function saveDeletedSafe(ids){
+    try { saveDeletedStories(ids); }
+    catch(e){ localStorage.setItem('nive_deleted_stories', JSON.stringify(ids || [])); }
+  }
+
+  function findStory(){
+    return getStoriesSafe().find(s => String(s.id) === String(storyId)) || null;
+  }
+
+  function signalUpdate(){
+    try { localStorage.setItem('nive_last_update', String(Date.now())); } catch(e){}
+  }
+
+  function readImage(file){
+    return new Promise((resolve, reject) => {
+      if(!file) return reject(new Error('Select a file first'));
+      if(!file.type || !file.type.startsWith('image/')) return reject(new Error('Select an image file'));
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result || ''));
+      reader.onerror = () => reject(new Error('Could not read the image'));
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function setPreview(field, value){
+    imageState[field] = value || '';
+    const preview = refs[field + 'Preview'];
+    if(preview) preview.style.backgroundImage = value ? `url("${value}")` : '';
+  }
+
+  async function useImage(field, fileInputId, msgId){
+    const msg = document.getElementById(msgId);
+    try {
+      msg.textContent = 'Adding...';
+      const value = await readImage(document.getElementById(fileInputId).files[0]);
+      setPreview(field, value);
+      msg.textContent = 'Added';
+      saveStory(false);
+    } catch(err) {
+      msg.textContent = err.message || 'Image failed';
+    }
+  }
+
+  function storyFromForm(existing){
+    return {
+      ...(existing || {}),
+      id: storyId,
+      title: refs.title.value.trim() || 'Untitled',
+      author: refs.author.value.trim(),
+      genre: refs.genre.value.trim(),
+      rating: Number(refs.rating.value) || 0,
+      description: refs.description.value.trim(),
+      premium: refs.premium.checked,
+      featured: refs.featured.checked,
+      cover: imageState.cover,
+      banner: imageState.banner,
+      avatar: imageState.avatar,
+      createdAt: existing?.createdAt || new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+  }
+
+  function saveStory(showStatus = true){
+    const stories = getStoriesSafe();
+    const index = stories.findIndex(s => String(s.id) === String(storyId));
+    const existing = index >= 0 ? stories[index] : baseStory;
+    const story = storyFromForm(existing);
+
+    if(index >= 0) stories[index] = story;
+    else stories.unshift(story);
+
+    saveStoriesSafe(stories);
+    signalUpdate();
+    if(!params.get('id')) history.replaceState(null, '', `story-editor.html?id=${encodeURIComponent(storyId)}`);
+    if(showStatus){
+      refs.status.textContent = 'Saved at ' + new Date().toLocaleTimeString();
+      setTimeout(() => refs.status.textContent = '', 2500);
+    }
+  }
+
+  async function loadStory(){
+    let story = findStory();
+    if(!story && typeof getStory === 'function') story = await getStory(storyId);
+    if(!story) return;
+    baseStory = story;
+    refs.title.value = story.title || '';
+    refs.author.value = story.author || '';
+    refs.genre.value = story.genre || '';
+    refs.rating.value = story.rating || 0;
+    refs.description.value = story.description || '';
+    refs.featured.checked = !!story.featured;
+    refs.premium.checked = !!story.premium;
+    setPreview('cover', story.cover || '');
+    setPreview('banner', story.banner || '');
+    setPreview('avatar', story.avatar || '');
+  }
+
+  document.getElementById('saveBtn').addEventListener('click', () => saveStory(true));
+  document.getElementById('chaptersBtn').addEventListener('click', () => {
+    saveStory(false);
+    location.href = `chapter-editor.html?id=${encodeURIComponent(storyId)}`;
+  });
+  document.getElementById('backBtn').addEventListener('click', () => location.href = 'manage-stories.html');
+  document.getElementById('deleteBtn').addEventListener('click', () => {
+    if(!confirm('Delete this story?')) return;
+    const deleted = getDeletedSafe();
+    if(!deleted.includes(storyId)) deleted.push(storyId);
+    saveDeletedSafe(deleted);
+    saveStoriesSafe(getStoriesSafe().filter(s => String(s.id) !== String(storyId)));
+    signalUpdate();
+    location.href = 'manage-stories.html';
+  });
+
+  document.getElementById('uploadCover').addEventListener('click', () => useImage('cover', 'coverFile', 'coverMsg'));
+  document.getElementById('uploadBanner').addEventListener('click', () => useImage('banner', 'bannerFile', 'bannerMsg'));
+  document.getElementById('uploadAvatar').addEventListener('click', () => useImage('avatar', 'avatarFile', 'avatarMsg'));
+  document.getElementById('clearCover').addEventListener('click', () => { setPreview('cover', ''); saveStory(false); });
+  document.getElementById('clearBanner').addEventListener('click', () => { setPreview('banner', ''); saveStory(false); });
+  document.getElementById('clearAvatar').addEventListener('click', () => { setPreview('avatar', ''); saveStory(false); });
+
+  // AI Document Auto-Import Handler
+  document.getElementById('aiImportBtn')?.addEventListener('click', async () => {
+    const fileInput = document.getElementById('aiDocFile');
+    const statusMsg = document.getElementById('aiStatusMsg');
+    const file = fileInput ? (fileInput.files && fileInput.files[0]) : null;
+
+    if (!file) {
+      statusMsg.textContent = '❌ Please select a PDF, DOCX, Text, or Markdown document first.';
+      return;
+    }
+
+    try {
+      statusMsg.textContent = '⏳ Reading document and extracting readable text...';
+      const rawText = await NiveAIStoryParser.readDocumentFile(file);
+      statusMsg.textContent = '⏳ Parsing chapters and generating choices...';
+      const parsed = NiveAIStoryParser.parseManuscript(rawText, refs.title.value.trim() || file.name.replace(/\.[^/.]+$/, ""));
+
+      statusMsg.textContent = `🤖 Generated ${parsed.totalChapters} chapters and choice branches. Saving...`;
+
+      // Auto fill form fields if empty
+      if (!refs.title.value) refs.title.value = parsed.title;
+      if (!refs.description.value) refs.description.value = `Interactive story auto-parsed from ${file.name}.`;
+      if (!refs.author.value) refs.author.value = "Imported Manuscript";
+      if (!refs.genre.value) refs.genre.value = "Fantasy";
+      if (!imageState.cover) setPreview('cover', 'assets/covers/default.png');
+      if (!imageState.banner) setPreview('banner', imageState.cover || 'assets/covers/default.png');
+
+      // Save story metadata
+      saveStory(false);
+
+      // Save extracted chapters into custom chapters store
+      const allCustomChapters = JSON.parse(localStorage.getItem('nive_custom_chapters') || '{}');
+      allCustomChapters[storyId] = parsed.chapters;
+      localStorage.setItem('nive_custom_chapters', JSON.stringify(allCustomChapters));
+
+      if (window.firebase && firebase.firestore) {
+        const batch = firebase.firestore().batch();
+        parsed.chapters.forEach((chapter, index) => {
+          const ref = firebase.firestore()
+            .collection("stories")
+            .doc(String(storyId))
+            .collection("chapters")
+            .doc(String(chapter.id));
+          batch.set(ref, {
+            ...chapter,
+            storyId: String(storyId),
+            order: index + 1,
+            updatedAt: new Date().toISOString()
+          }, { merge: true });
+        });
+        batch.commit().catch(() => {});
+      }
+
+      statusMsg.textContent = `✅ Successfully imported ${parsed.totalChapters} chapters with auto-generated choices!`;
+      if (typeof showToast === "function") showToast(`AI Imported ${parsed.totalChapters} chapters!`);
+    } catch (err) {
+      statusMsg.textContent = `❌ Import failed: ${err.message || 'Unknown parsing error'}`;
+    }
+  });
+
+  loadStory();
+})();
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Purchase coins, subscribe to premium, or redeem codes in the Nive store." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <title>Nive Store</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/store.css" />
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/user.js"></script>
+</head>
+<body data-nav-active="store">
+  <header class="store-header">
+    <div>
+      <div class="store-kicker">Nive Store</div>
+      <h1>Coins and Premium</h1>
+    </div>
+    <a href="library.html" class="btn ghost small">Browse Library</a>
+  </header>
+
+  <main class="store-main">
+    <section class="store-hero">
+      <div class="store-hero-copy">
+        <div class="balance-label">Your Balance</div>
+        <div class="balance-amount"><span id="coinBalance">0</span> coins</div>
+        <p>Use coins for premium chapters, bonus choices, and story extras.</p>
+      </div>
+      <div class="store-hero-art" aria-hidden="true">
+        <img src="assets/banners/banner1.png" alt="">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="section-title">Coin Packs</div>
+          <p class="section-sub">Fast top-ups for chapter unlocks.</p>
+        </div>
+      </div>
+      <div class="coin-packs" id="coinPacks">
+        <article class="coin-pack interactive-card" data-coins="100" data-price="0.99" data-label="Starter Pack">
+          <div>
+            <div class="pack-label">Starter</div>
+            <strong>100 coins</strong>
+            <span class="coin-price">$0.99</span>
+          </div>
+          <button class="btn small" type="button">Buy</button>
+        </article>
+        <article class="coin-pack featured interactive-card" data-coins="500" data-price="3.99" data-label="Best Value Pack">
+          <div>
+            <div class="pack-label">Best Value</div>
+            <strong>500 coins</strong>
+            <span class="coin-price">$3.99</span>
+          </div>
+          <button class="btn small" type="button">Buy</button>
+        </article>
+        <article class="coin-pack interactive-card" data-coins="1000" data-price="6.99" data-label="Power Reader Pack">
+          <div>
+            <div class="pack-label">Power Reader</div>
+            <strong>1000 coins</strong>
+            <span class="coin-price">$6.99</span>
+          </div>
+          <button class="btn small" type="button">Buy</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="store-grid">
+      <article class="premium-card interactive-card">
+        <div class="premium-copy">
+          <div class="pack-label">Membership</div>
+          <h2>Nive Premium</h2>
+          <p>Open exclusive stories, offline reading, and early chapter drops.</p>
+          <div class="premium-features">
+            <span>Unlimited reading</span>
+            <span>Offline downloads</span>
+            <span>Exclusive stories</span>
+            <span>Early access</span>
+          </div>
+        </div>
+        <button class="btn" id="premiumBtn" type="button">Subscribe - $4.99/month</button>
+      </article>
+
+      <article class="redeem-card interactive-card">
+        <div>
+          <div class="pack-label">Gift Code</div>
+          <h2>Redeem Code</h2>
+          <p>Enter a promo or creator code.</p>
+        </div>
+        <div class="redeem-row">
+          <input id="redeemInput" type="text" placeholder="FREE100" aria-label="Redeem code">
+          <button class="btn small" id="redeemBtn" type="button">Redeem</button>
+        </div>
+      </article>
+    </section>
+
+    <footer class="store-footer-links" style="margin-top: 3rem; text-align: center; color: var(--muted); font-size: 0.85rem;">
+      <a href="terms.html" style="color: var(--muted); margin-right: 1.5rem;">Terms of Service</a>
+      <a href="privacy.html" style="color: var(--muted);">Privacy Policy</a>
+    </footer>
+  </main>
+
+  <!-- Multi-Channel Payment Checkout Modal -->
+  <div id="paymentModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="max-width: 480px; border-radius: 20px; padding: 2rem; background: rgba(18,18,24,0.95); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(24px); box-shadow: 0 20px 50px rgba(0,0,0,0.6);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #fff;" id="modalItemTitle">Select Payment Channel</h3>
+        <button type="button" id="closePaymentModal" style="background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;">&times;</button>
+      </div>
+
+      <div style="background: rgba(255,255,255,0.04); border-radius: 12px; padding: 1rem; margin-bottom: 1.25rem; border: 1px solid rgba(255,255,255,0.06);">
+        <div style="display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.8); font-size: 0.95rem;">
+          <span id="modalItemDesc">100 coins pack</span>
+          <strong id="modalItemPrice" style="color: #fff; font-size: 1.25rem; font-weight: 900;">$0.99</strong>
+        </div>
+      </div>
+
+      <!-- Payment Channel Tabs -->
+      <div style="display: flex; gap: 6px; margin-bottom: 1.25rem; background: rgba(0,0,0,0.3); padding: 4px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap;">
+        <button type="button" class="channel-tab active" data-channel="stripe" style="flex: 1; min-width: 90px; padding: 8px; border-radius: 8px; border: none; background: rgba(168,85,247,0.25); color: #fff; font-weight: 700; font-size: 0.8rem; cursor: pointer;">💳 Stripe</button>
+        <button type="button" class="channel-tab" data-channel="paystack" style="flex: 1; min-width: 90px; padding: 8px; border-radius: 8px; border: none; background: transparent; color: rgba(255,255,255,0.6); font-weight: 700; font-size: 0.8rem; cursor: pointer;">⚡ Paystack</button>
+        <button type="button" class="channel-tab" data-channel="paypal" style="flex: 1; min-width: 90px; padding: 8px; border-radius: 8px; border: none; background: transparent; color: rgba(255,255,255,0.6); font-weight: 700; font-size: 0.8rem; cursor: pointer;">🅿️ PayPal</button>
+        <button type="button" class="channel-tab" data-channel="transfer" style="flex: 1; min-width: 90px; padding: 8px; border-radius: 8px; border: none; background: transparent; color: rgba(255,255,255,0.6); font-weight: 700; font-size: 0.8rem; cursor: pointer;">🏦 Bank Transfer</button>
+      </div>
+
+      <!-- Stripe Form View -->
+      <form id="stripePaymentForm" class="channel-view" style="display: block;">
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.6); margin-bottom: 0.4rem;">Card Details (Stripe Gateway)</label>
+          <div style="padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.4); color: #fff;">
+            <input type="text" id="stripeCardNumber" placeholder="4242 •••• •••• 4242" style="width: 100%; background: transparent; border: none; color: #fff; font-family: monospace; font-size: 0.95rem; outline: none;" required />
+          </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem;">
+          <div>
+            <label style="display: block; font-size: 0.78rem; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.4rem;">Expires</label>
+            <input type="text" id="stripeCardExpiry" placeholder="MM/YY" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.4); color: #fff; outline: none;" required />
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.78rem; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.4rem;">CVC</label>
+            <input type="text" id="stripeCardCvc" placeholder="123" maxlength="4" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.4); color: #fff; outline: none;" required />
+          </div>
+        </div>
+
+        <button type="submit" id="submitStripeBtn" class="btn" style="width: 100%; padding: 0.85rem; font-size: 0.95rem; font-weight: 700; background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);">Pay via Stripe Gateway</button>
+      </form>
+
+      <!-- Paystack View -->
+      <div id="paystackPaymentView" class="channel-view" style="display: none;">
+        <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 1.25rem; line-height: 1.5;">
+          Paystack allows payments via Debit/Credit Cards, Bank Transfer, USSD, or Mobile Money.
+        </p>
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; font-size: 0.78rem; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.4rem;">Billing Email</label>
+          <input type="email" id="paystackEmail" placeholder="your@email.com" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.4); color: #fff; outline: none;" required />
+        </div>
+        <button type="button" id="paystackPayBtn" class="btn" style="width: 100%; padding: 0.85rem; font-size: 0.95rem; font-weight: 700; background: linear-gradient(135deg, #00c853 0%, #0288d1 100%);">Launch Paystack Popup</button>
+      </div>
+
+      <!-- PayPal View -->
+      <div id="paypalPaymentView" class="channel-view" style="display: none;">
+        <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 1.25rem; line-height: 1.5;">
+          Complete your instant payment via your PayPal account or linked credit cards.
+        </p>
+        <button type="button" id="paypalPayBtn" class="btn" style="width: 100%; padding: 0.85rem; font-size: 0.95rem; font-weight: 700; background: #ffc439; color: #000;">Checkout with PayPal</button>
+      </div>
+
+      <!-- Bank Transfer View -->
+      <div id="transferPaymentView" class="channel-view" style="display: none;">
+        <div style="background: rgba(255,255,255,0.03); border: 1px dashed rgba(255,255,255,0.2); border-radius: 12px; padding: 1rem; margin-bottom: 1.25rem;">
+          <div style="font-size: 0.75rem; text-transform: uppercase; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; margin-bottom: 0.5rem;">Company Bank Account Details</div>
+          
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem; font-size: 0.88rem;">
+            <span style="color: rgba(255,255,255,0.6);">Bank Name:</span>
+            <strong style="color: #fff;">Zenith Bank PLC</strong>
+          </div>
+          
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem; font-size: 0.88rem;">
+            <span style="color: rgba(255,255,255,0.6);">Account Name:</span>
+            <strong style="color: #fff;">Nive Media Technologies Ltd</strong>
+          </div>
+          
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem; font-size: 0.88rem;">
+            <span style="color: rgba(255,255,255,0.6);">Account Number:</span>
+            <strong style="color: #a855f7; font-family: monospace; font-size: 1.05rem;">1012345678</strong>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.88rem;">
+            <span style="color: rgba(255,255,255,0.6);">Sort / SWIFT Code:</span>
+            <strong style="color: #fff; font-family: monospace;">ZENINGLA</strong>
+          </div>
+        </div>
+
+        <form id="transferProofForm">
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; font-size: 0.78rem; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.4rem;">Transfer Reference / Depositor Name</label>
+            <input type="text" id="transferRefInput" placeholder="e.g. TXN-89412 or Depositor Name" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.4); color: #fff; outline: none;" required />
+          </div>
+
+          <button type="submit" id="submitTransferBtn" class="btn" style="width: 100%; padding: 0.85rem; font-size: 0.95rem; font-weight: 700; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);">Submit Transfer Proof</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="nav-container" aria-hidden="false"></div>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/store.js"></script>
+</body>
+</html>

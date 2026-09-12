@@ -1,0 +1,186 @@
+﻿<!doctype html>
+<html lang="en" data-admin-auth="checking">
+<head>
+<meta charset="utf-8">
+
+  <meta name="description" content="Nive - A premium reading experience." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<title>Manage Stories</title>
+<link rel="stylesheet" href="css/global.css">
+<style>
+  body{background:#050505;color:#fff;font-family:'Segoe UI',sans-serif;padding:40px}
+  h1{text-align:center;margin-bottom:20px}
+  .filters{display:flex;gap:12px;margin-bottom:18px}
+  input,select{padding:10px;border-radius:10px;border:none;background:rgba(255,255,255,0.06);color:#fff}
+  .stories-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+  .story-card{position:relative;background:rgba(255,255,255,0.03);backdrop-filter:blur(12px);border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.5);transition:transform .18s}
+  .story-card:hover{transform:translateY(-6px)}
+  .story-cover{height:160px;background-size:cover;background-position:center}
+  .story-content{padding:14px}
+  .story-title{font-size:16px;font-weight:700;margin-bottom:8px}
+  .story-description{font-size:13px;opacity:.85;margin-bottom:10px}
+  .story-meta{font-size:12px;opacity:.7;margin-bottom:12px}
+  .story-buttons{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{padding:8px 10px;border-radius:10px;border:none;cursor:pointer}
+  .edit-btn{background:#007bff;color:#fff}
+  .chapter-btn{background:#6f42c1;color:#fff}
+  .preview-btn{background:#28a745;color:#fff}
+  .delete-btn{background:#dc3545;color:#fff}
+  .small{font-size:12px;color:rgba(255,255,255,0.7)}
+</style>
+</head>
+<body>
+  <h1>Manage Stories</h1>
+
+  <div class="filters">
+    <input id="searchInput" placeholder="Search by title...">
+    <select id="genreFilter"><option value="">All Genres</option><option>Romance</option><option>Thriller</option><option>Fantasy</option><option>Drama</option><option>Comedy</option></select>
+    <select id="premiumFilter"><option value="">All</option><option value="true">Premium</option><option value="false">Free</option></select>
+    <button id="newBtn" class="btn" style="margin-left:auto;background:#0ea5a4;color:#fff;border-radius:10px">New Story</button>
+  </div>
+
+  <div class="stories-grid" id="storiesContainer"></div>
+
+  
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/user.js?v=email-only-admin-20260903"></script>
+<script src="js/admin-auth.js?v=email-only-admin-20260903"></script>
+<script src="js/database.js"></script>
+  <script src="js/stories.js"></script>
+  <script>
+  (function(){
+    requireAdmin();
+
+    // Upload server origin (used for serving uploaded images when frontend is on a different origin)
+    const UPLOAD_SERVER_ORIGIN = 'http://localhost:3000';
+
+    const container = document.getElementById('storiesContainer');
+    const searchInput = document.getElementById('searchInput');
+    const genreFilter = document.getElementById('genreFilter');
+    const premiumFilter = document.getElementById('premiumFilter');
+    const newBtn = document.getElementById('newBtn');
+
+    function normalizePath(p){ if(!p) return ''; if(p.startsWith('/')||p.startsWith('http')||p.startsWith('data:')) return p; return '/' + p; }
+    function imageSrc(p){
+      const path = normalizePath(p) || '/assets/covers/default.png';
+      if(path.startsWith('data:') || path.startsWith('http')) return path;
+      if(path.startsWith('/assets/uploads/')) return UPLOAD_SERVER_ORIGIN + path;
+      return location.origin + path;
+    }
+    function escapeHtml(str){ return String(str||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+    async function loadList(){
+      let list = [];
+      if (typeof getAllStories === 'function') list = await getAllStories();
+      else if (typeof getStories === 'function') list = await getStories();
+      else list = getCustomStories();
+      if(!Array.isArray(list)) list = [];
+      return list;
+    }
+
+    async function renderStories(){
+      const q = (searchInput.value||'').trim().toLowerCase();
+      const g = genreFilter.value;
+      const p = premiumFilter.value;
+      let list = await loadList();
+
+      if(q) list = list.filter(s => (s.title||'').toLowerCase().includes(q) || (s.author||'').toLowerCase().includes(q));
+      if(g) list = list.filter(s => s.genre === g);
+      if(p) list = list.filter(s => String(s.premium) === p);
+
+      container.innerHTML = '';
+      if(!list.length){ container.innerHTML = '<div class="small">No stories found.</div>'; return; }
+
+      list.forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'story-card';
+        const cover = imageSrc(s.cover || s.banner);
+        card.innerHTML = `
+          <div class="story-cover" style="background-image:url('${cover}')"></div>
+          <div class="story-content">
+            <div class="story-title">${escapeHtml(s.title||'Untitled')}</div>
+            <div class="story-description">${escapeHtml((s.description||'').slice(0,120))}${(s.description||'').length>120?'â€¦':''}</div>
+            <div class="story-meta">${escapeHtml(s.genre||'')} â€¢ ${escapeHtml(s.author||'')} â€¢ ${s.premium ? 'Premium' : 'Free'} ${s.featured ? ' â€¢ Featured' : ''}</div>
+            <div class="story-buttons">
+              <button class="btn edit-btn" data-id="${encodeURIComponent(s.id)}">Edit</button>
+              <button class="btn chapter-btn" data-ch="${encodeURIComponent(s.id)}">Chapters</button>
+              <button class="btn preview-btn" data-prev="${encodeURIComponent(s.id)}">Preview</button>
+              <button class="btn delete-btn" data-del="${encodeURIComponent(s.id)}">Delete</button>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // expose renderStories so storage events can call it
+    window.renderStories = renderStories;
+
+    function getCustomStoriesSafe(){ try{ return getCustomStories(); }catch(e){ return JSON.parse(localStorage.getItem('nive_custom_stories')||'[]'); } }
+    function saveCustomStoriesSafe(list){ try{ saveCustomStories(list); }catch(e){ localStorage.setItem('nive_custom_stories', JSON.stringify(list||[])); } }
+    function getDeletedSafe(){ try{ return getDeletedStories(); }catch(e){ return JSON.parse(localStorage.getItem('nive_deleted_stories')||'[]'); } }
+    function saveDeletedSafe(ids){ try{ saveDeletedStories(ids); }catch(e){ localStorage.setItem('nive_deleted_stories', JSON.stringify(ids||[])); } }
+
+    function deleteStory(id){
+      if(!confirm('Delete this story?')) return;
+      const del = getDeletedSafe();
+      if(!del.includes(id)) del.push(id);
+      saveDeletedSafe(del);
+      let customs = getCustomStoriesSafe();
+      customs = customs.filter(s => String(s.id) !== String(id));
+      saveCustomStoriesSafe(customs);
+      // signal update for other tabs
+      try { localStorage.setItem('nive_last_update', String(Date.now())); } catch(e){}
+      renderStories();
+    }
+
+    container.addEventListener('click', (ev) => {
+      const edit = ev.target.closest('button[data-id]');
+      if(edit){ const id = decodeURIComponent(edit.getAttribute('data-id')); return location.href = `story-editor.html?id=${encodeURIComponent(id)}`; }
+      const ch = ev.target.closest('button[data-ch]');
+      if(ch){ const id = decodeURIComponent(ch.getAttribute('data-ch')); return location.href = `chapter-editor.html?id=${encodeURIComponent(id)}`; }
+      const prev = ev.target.closest('button[data-prev]');
+      if(prev){ const id = decodeURIComponent(prev.getAttribute('data-prev')); return location.href = `story.html?id=${encodeURIComponent(id)}`; }
+      const del = ev.target.closest('button[data-del]');
+      if(del){ const id = decodeURIComponent(del.getAttribute('data-del')); return deleteStory(id); }
+    });
+
+    newBtn.addEventListener('click', () => {
+      const id = 'custom-' + Date.now().toString(36) + '-' + Math.floor(Math.random()*1e6);
+      const newStory = { id, title:'Untitled', author:'', genre:'', description:'', cover:'', banner:'', avatar:'', rating:0, premium:false, featured:false, createdAt:new Date().toISOString() };
+      const customs = getCustomStoriesSafe();
+      customs.unshift(newStory);
+      saveCustomStoriesSafe(customs);
+      // signal update and open editor
+      try { localStorage.setItem('nive_last_update', String(Date.now())); } catch(e){}
+      location.href = `story-editor.html?id=${encodeURIComponent(id)}`;
+    });
+
+    searchInput.addEventListener('input', renderStories);
+    genreFilter.addEventListener('change', renderStories);
+    premiumFilter.addEventListener('change', renderStories);
+
+    // Refresh when another tab/editor updates stories
+    window.addEventListener('storage', (ev) => {
+      if (ev && ev.key === 'nive_last_update') {
+        try { renderStories(); } catch(e){ try { location.reload(); } catch(e){} }
+      }
+    });
+
+    renderStories();
+  })();
+  </script>
+</body>
+</html>
+
+
+

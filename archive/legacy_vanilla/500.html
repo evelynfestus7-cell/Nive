@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="System Error - Nive interactive stories." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <title>500 - Unexpected Error | Nive</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <style>
+    .error-container {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+    .error-code {
+      font-size: clamp(5rem, 15vw, 8rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #ef4444 0%, #f97316 50%, #eab308 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .error-card {
+      max-width: 480px;
+      width: 100%;
+      background: rgba(18, 18, 24, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .error-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    .error-desc {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .error-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  </style>
+  <script src="js/user.js"></script>
+</head>
+<body data-nav-active="none">
+  <main class="error-container">
+    <div class="error-card">
+      <div class="error-code">500</div>
+      <h1 class="error-title">Something Went Wrong</h1>
+      <p class="error-desc">We encountered an unexpected plot twist on our servers. Please refresh the page or try again in a few moments.</p>
+      <div class="error-actions">
+        <button class="btn" id="reloadPageBtn" type="button">Reload Page</button>
+        <a href="home.html" class="btn ghost">Return to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="nav-container"></div>
+  <script src="js/navigation.js"></script>
+  <script src="js/analytics.js"></script>
+  <script>
+    document.getElementById("reloadPageBtn")?.addEventListener("click", () => window.location.reload());
+  </script>
+</body>
+</html>

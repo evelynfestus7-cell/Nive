@@ -1,0 +1,194 @@
+/* search.css — polished search UI for Nive */
+
+.search-header{
+  padding:18px 20px;
+  background:var(--card);
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter:blur(10px);
+}
+
+.search-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.title{
+  font-size:24px;
+  font-weight:800;
+  line-height:1.1;
+}
+
+.search-summary{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.search-controls{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  max-width:640px;
+  width:100%;
+  padding:9px 12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:rgba(255,255,255,.035);
+}
+
+.search-input{
+  flex:1;
+  padding:0;
+  border-radius:0;
+  border:none;
+  background:transparent;
+  color:var(--text);
+  font-size:15px;
+}
+
+.icon-btn{
+  background:transparent;
+  border:none;
+  color:var(--muted);
+  cursor:pointer;
+  padding:4px;
+  border-radius:8px;
+  display:inline-flex;
+}
+
+.search-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:12px;
+  gap:12px;
+}
+
+.genre-grid{
+  display:flex;
+  gap:8px;
+  overflow:auto;
+  padding-bottom:6px;
+}
+
+.genre-card{
+  border:none;
+  padding:8px 14px;
+  border-radius:20px;
+  background:var(--card);
+  color:var(--muted);
+  cursor:pointer;
+  white-space:nowrap;
+  transition:.18s;
+  border:1px solid var(--border);
+}
+
+.genre-card.active{
+  background:var(--accent);
+  color:white;
+  border-color:rgba(255,255,255,0.06);
+}
+
+.sort-wrap{ display:flex; align-items:center; gap:8px; }
+
+.sort-select{
+  padding:8px 10px;
+  border-radius:10px;
+  background:var(--card);
+  color:var(--text);
+  border:1px solid var(--border);
+}
+
+/* Layout */
+.search-main{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) 280px;
+  gap:18px;
+  padding:20px;
+}
+
+.results{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:16px;
+}
+
+.book-card{
+  display:grid;
+  grid-template-columns:92px minmax(0,1fr);
+  gap:14px;
+  background:var(--card);
+  padding:12px;
+  border-radius:8px;
+  align-items:stretch;
+  transition:transform .18s ease, background .18s;
+  cursor:pointer;
+  border:1px solid var(--border);
+}
+
+.book-card:hover{ transform:translateY(-6px); background:var(--card-light); box-shadow:0 16px 36px rgba(0,0,0,.36); }
+
+.book-cover{
+  width:92px;
+  height:136px;
+  border-radius:8px;
+  object-fit:cover;
+  background:var(--card-light);
+}
+
+.book-info{ flex:1; display:flex; flex-direction:column; justify-content:center; min-width:0; gap:6px; }
+
+.book-title{ font-size:18px; font-weight:800; line-height:1.25; margin-bottom:0; }
+.book-author{ color:var(--muted); font-size:12px; font-weight:600; }
+.book-description{ color:color-mix(in srgb, var(--muted) 78%, var(--text)); font-size:12px; line-height:1.45; }
+.book-stats{ color:color-mix(in srgb, var(--muted) 82%, transparent); font-size:10px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+
+.empty-note{ padding:18px; background:rgba(255,255,255,0.02); border-radius:8px; color:var(--muted); border:1px dashed var(--border); }
+
+.side-panel{ padding:14px; background:var(--card); border-radius:8px; height:max-content; border:1px solid var(--border); position:sticky; top:128px; }
+
+.recent-list{ display:flex; flex-direction:column; gap:8px; margin-bottom:12px; }
+
+.recent-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  width:100%;
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.02);
+  cursor:pointer;
+  color:var(--muted);
+  font-size:14px;
+  text-align:left;
+}
+
+.recent-item .material-symbols-rounded{font-size:18px}
+
+.filters label{ display:block; margin-bottom:8px; color:var(--muted); font-size:14px; }
+
+.empty-note.compact{padding:10px;text-align:left}
+
+@media (max-width:900px){
+  .search-main{ grid-template-columns: 1fr; }
+  .side-panel{ order:2; position:static; }
+  .search-top{align-items:stretch;flex-direction:column}
+  .search-controls{max-width:none}
+}
+
+@media (max-width:520px){
+  .results{grid-template-columns:1fr}
+  .book-card{grid-template-columns:78px minmax(0,1fr)}
+  .book-cover{width:78px;height:116px}
+  .search-meta{align-items:stretch;flex-direction:column}
+  .sort-select{width:100%}
+  .search-header{padding:14px 12px}
+  .search-main{padding:14px 12px 100px}
+  .book-title{font-size:16px}
+}

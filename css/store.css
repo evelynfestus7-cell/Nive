@@ -1,0 +1,239 @@
+.store-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(10,10,10,.82);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+}
+
+.store-kicker,
+.pack-label {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.store-header h1 {
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.store-main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 18px 120px;
+}
+
+.store-hero {
+  min-height: 260px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 18px;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(213,0,0,.22), rgba(255,255,255,.035) 46%, rgba(0,0,0,.08)),
+    var(--card);
+}
+
+.store-hero-copy {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.balance-label {
+  color: rgba(255,255,255,.72);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.balance-amount {
+  margin: 6px 0 10px;
+  font-size: clamp(38px, 6vw, 68px);
+  line-height: .95;
+  font-weight: 900;
+}
+
+.store-hero-copy p,
+.section-sub,
+.premium-card p,
+.redeem-card p {
+  color: var(--muted);
+}
+
+.store-hero-art {
+  min-height: 220px;
+}
+
+.store-hero-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.04) contrast(1.05);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.coin-packs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.coin-pack,
+.premium-card,
+.redeem-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02)),
+    var(--card);
+}
+
+.coin-pack {
+  min-height: 150px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.coin-pack.featured {
+  border-color: rgba(213,0,0,.42);
+  background:
+    linear-gradient(145deg, rgba(213,0,0,.18), rgba(255,255,255,.03)),
+    var(--card);
+}
+
+.coin-pack strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.coin-price {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, .8fr);
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.premium-card,
+.redeem-card {
+  padding: 22px;
+}
+
+.premium-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: end;
+}
+
+.premium-card h2,
+.redeem-card h2 {
+  margin: 6px 0 8px;
+  font-size: 26px;
+}
+
+.premium-features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.premium-features span {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.055);
+  color: rgba(255,255,255,.86);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.redeem-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.redeem-row {
+  display: flex;
+  gap: 10px;
+}
+
+.redeem-row input {
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.045);
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 860px) {
+  .store-hero,
+  .store-grid,
+  .premium-card {
+    grid-template-columns: 1fr;
+  }
+
+  .store-hero-art {
+    order: -1;
+    height: 220px;
+  }
+
+  .coin-packs {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .store-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .store-hero-copy,
+  .premium-card,
+  .redeem-card {
+    padding: 18px;
+  }
+
+  .premium-features,
+  .redeem-row {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+}

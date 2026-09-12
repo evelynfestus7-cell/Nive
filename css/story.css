@@ -1,0 +1,214 @@
+/* =========================
+   STORY DETAIL PAGE
+   - Banner, metadata, chapters
+   - Characters, choices, progress
+   - Premium unlock, achievements
+========================= */
+
+/* Banner */
+.banner {
+  height: 60vh;
+  background: var(--card) center / cover no-repeat;
+  position: relative;
+}
+.banner::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 200px;
+  background: linear-gradient(to top, var(--bg), transparent);
+}
+
+/* Content area */
+.story-content {
+  padding: 20px;
+  margin-top: -60px;
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Genre tag */
+.story-genre {
+  color: var(--accent);
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.story-detail-title {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+/* Author row */
+.author-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.author {
+  opacity: 0.8;
+}
+.author-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--card) center / cover no-repeat;
+  display: none;
+}
+
+/* Rating */
+.story-rating {
+  margin-bottom: 20px;
+  color: gold;
+  font-size: 16px;
+}
+
+/* Action buttons */
+.story-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.story-actions .btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  justify-content: center;
+}
+.story-actions .btn.downloaded {
+  background: #1e7e34;
+}
+
+/* Description */
+.story-description {
+  line-height: 1.8;
+  opacity: 0.95;
+  font-size: 15px;
+}
+
+/* Chapter list item */
+.chapter-item {
+  padding: 14px 16px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease;
+  font-weight: 500;
+}
+.chapter-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateX(4px);
+}
+
+/* Characters */
+.character {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.character .avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: var(--card) center / cover no-repeat;
+  flex-shrink: 0;
+}
+
+/* Choices preview */
+.story-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.story-choices button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.16s ease, opacity 0.16s ease;
+}
+.story-choices button:hover {
+  transform: translateY(-2px);
+}
+
+/* Empty note */
+.empty-note {
+  opacity: 0.8;
+  padding: 14px 16px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+}
+
+/* Progress bar */
+.story-progress {
+  height: 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.story-progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), #ff6b6b);
+  transition: width 0.35s ease;
+  border-radius: 20px;
+}
+
+/* Achievement card */
+.achievement-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Chapter preview (injected dynamically) */
+#chapterTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  margin-top: 8px;
+}
+#chapterContent {
+  line-height: 1.75;
+  opacity: 0.92;
+  margin-bottom: 16px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .story-detail-title {
+    font-size: 28px;
+  }
+  .banner {
+    height: 45vh;
+  }
+}

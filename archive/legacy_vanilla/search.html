@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta name="description" content="Nive - A premium reading experience." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <title>Discover Stories - Nive</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/search.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+</head>
+<body data-nav-active="search">
+  <div id="nav-container" aria-hidden="false"></div>
+
+  <header class="search-header">
+    <div class="search-top">
+      <div>
+        <h1 class="title">Discover Stories</h1>
+        <div id="resultSummary" class="search-summary">Browse the newest stories on Nive.</div>
+      </div>
+      <div class="search-controls">
+        <span class="material-symbols-rounded" aria-hidden="true">search</span>
+        <input id="searchInput" class="search-input" type="search" placeholder="Search titles, authors, genres..." aria-label="Search stories">
+        <button id="clearBtn" class="icon-btn" type="button" title="Clear search" aria-label="Clear search">
+          <span class="material-symbols-rounded">close</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="search-meta">
+      <div class="genre-grid" id="genreGrid" role="tablist" aria-label="Genres"></div>
+      <div class="sort-wrap">
+        <label for="sortSelect" class="sr-only">Sort</label>
+        <select id="sortSelect" class="sort-select" aria-label="Sort results">
+          <option value="relevance">Relevance</option>
+          <option value="trending">Top Rated</option>
+          <option value="newest">Newest</option>
+          <option value="alpha">A to Z</option>
+          <option value="free">Free First</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="search-main container">
+    <section class="section">
+      <div class="section-title">Results</div>
+      <div id="results" class="results" aria-live="polite"></div>
+      <div id="noResults" class="empty-note muted" hidden>No results. Try another keyword or genre.</div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="section-title">Recent Searches</div>
+      <div id="recentList" class="recent-list"></div>
+
+      <div class="section-title">Filters</div>
+      <div class="filters">
+        <label><input type="checkbox" id="filterDownloaded"> Downloaded</label>
+        <label><input type="checkbox" id="filterPremium"> Premium</label>
+        <label><input type="checkbox" id="filterFree"> Free</label>
+        <label><input type="checkbox" id="filterFeatured"> Featured</label>
+      </div>
+    </aside>
+  </main>
+
+  
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/user.js"></script>
+  <script src="js/database.js"></script>
+  <script src="js/offline.js"></script>
+  <script src="js/stories.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

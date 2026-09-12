@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta name="description" content="Nive - A premium reading experience." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logos/logo-dark-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/logos/logo-dark-512.png" />
+  <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <meta name="description" content="View your Nive reading profile, achievements, stats, and favorite genres." />
+  <title>Nive Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/profile.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded&display=swap" />
+</head>
+<body data-nav-active="profile">
+
+<!-- Navigation container (navigation.js will inject the bottom nav) -->
+<div id="nav-container" aria-hidden="false"></div>
+
+<main class="container profile-main" role="main" aria-labelledby="profileHeading">
+  <header class="profile-hero">
+    <div id="profileAvatarWrap" class="profile-avatar-wrap">
+      <img loading="lazy" id="profileAvatar" alt="Profile avatar" class="profile-avatar-img">
+      <div id="profileAvatarFallback" class="material-symbols-rounded profile-avatar-fallback">person</div>
+    </div>
+    <div class="profile-id">
+      <h1 id="profileName">Guest</h1>
+      <div id="profileUsername" class="small muted">@reader</div>
+      <p id="profileBio" class="profile-bio" style="margin-top: 6px; font-size: 13px; color: color-mix(in srgb, var(--muted) 88%, var(--text)); line-height: 1.35;">Passionate reader & storyteller.</p>
+      <div class="profile-social-counts" style="margin-top: 8px; font-size: 13px; display: flex; gap: 12px; font-weight: 600;">
+        <span id="followersCountLabel"><strong id="followersCount">0</strong> followers</span>
+        <span>•</span>
+        <span id="followingCountLabel"><strong id="followingCount">0</strong> following</span>
+      </div>
+      <div id="profileLevel" class="small muted profile-level" style="margin-top: 6px;">Level 1</div>
+    </div>
+    <div class="profile-actions">
+      <div class="profile-balance">
+        <div class="small muted">Coins</div>
+        <div id="profileCoinCount">0</div>
+      </div>
+      <button id="editProfileBtn" class="btn small" type="button">Edit Profile</button>
+    </div>
+  </header>
+
+
+  <!-- XP bar -->
+  <section class="profile-panel" aria-label="Experience">
+    <div class="profile-panel-head">
+      <div class="small muted">Progress to next level</div>
+      <div class="small muted" id="xpPercentLabel">0%</div>
+    </div>
+    <div class="profile-xp-track">
+      <div id="xpFill" class="profile-xp-fill"></div>
+    </div>
+  </section>
+
+  <!-- Quick stats -->
+  <section class="profile-stat-grid">
+    <div class="card profile-stat-card">
+      <div class="small muted">Books Read</div>
+      <div id="booksRead" class="profile-stat-value">0</div>
+    </div>
+    <div class="card profile-stat-card">
+      <div class="small muted">Chapters Read</div>
+      <div id="chaptersRead" class="profile-stat-value">0</div>
+    </div>
+    <div class="card profile-stat-card">
+      <div class="small muted">Hours Spent</div>
+      <div id="hoursSpent" class="profile-stat-value">0h</div>
+    </div>
+    <div class="card profile-stat-card streak-highlight">
+      <div class="small muted">Daily Streak</div>
+      <div id="streak" class="profile-stat-value">0 days</div>
+    </div>
+  </section>
+
+  <section class="card streak-card-live">
+    <div>
+      <div class="small muted">Reading momentum</div>
+      <div id="streakMessage" class="streak-message">Start a chapter today</div>
+    </div>
+    <div id="streakToday" class="streak-pill">Today</div>
+  </section>
+
+  <!-- Reading goals -->
+  <section class="profile-section">
+    <div class="section-title">Reading Goals</div>
+    <div id="readingGoals" class="goal-grid"></div>
+  </section>
+
+  <!-- Reading statistics -->
+  <section class="profile-section">
+    <div class="section-title">Reading Statistics</div>
+    <div class="stats-dashboard">
+      <div class="card profile-mini-stat">
+        <div class="small muted">Pages Read</div>
+        <div id="pagesRead">0</div>
+      </div>
+      <div class="card profile-mini-stat">
+        <div class="small muted">Minutes Read</div>
+        <div id="minutesRead">0</div>
+      </div>
+      <div class="card profile-mini-stat">
+        <div class="small muted">Active Days</div>
+        <div id="activeDays">0</div>
+      </div>
+      <div class="card profile-mini-stat">
+        <div class="small muted">Achievements</div>
+        <div id="achievementsCount">0</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section class="profile-section">
+    <div class="achievement-header-row" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+      <div class="section-title" style="margin:0;">Achievements (<span id="unlockedAchievementCount">0</span>/<span id="totalAchievementCount">46</span>)</div>
+      <div class="achievement-controls" style="display:flex; gap:10px; align-items:center;">
+        <select id="achievementCategorySelect" style="padding:6px 12px; background:var(--card); color:var(--text); border:1px solid var(--border); border-radius:8px; font-size:13px; cursor:pointer;">
+          <option value="all">All Categories</option>
+          <option value="unlocked">Unlocked Only</option>
+          <option value="Story">Story</option>
+          <option value="Reading">Reading</option>
+          <option value="Social">Social</option>
+          <option value="Goal">Goals & Streaks</option>
+          <option value="Level">Level</option>
+          <option value="Collection">Collection</option>
+          <option value="Seasonal">Seasonal</option>
+        </select>
+        <button id="toggleAchievementExpandBtn" class="btn small ghost" type="button" style="padding:6px 12px; font-size:12px;">
+          <span class="material-symbols-rounded" style="font-size:16px;">unfold_more</span> View All
+        </button>
+      </div>
+    </div>
+    <div id="achievementGridContainer" style="max-height: 280px; overflow-y: auto; transition: max-height 0.35s ease; border-radius: 8px; padding-right: 4px;">
+      <div id="achievementGrid" class="achievement-grid"></div>
+    </div>
+  </section>
+
+
+  <!-- Special badges -->
+  <section class="profile-section">
+    <div class="section-title">Special Badges</div>
+    <div id="specialBadges" class="special-badge-grid"></div>
+  </section>
+
+  <!-- Favorite genres -->
+  <section class="profile-section">
+    <div class="section-title">Favorite Genres</div>
+    <div id="favoriteGenres" class="genre-list"></div>
+  </section>
+</main>
+
+<!-- Edit Profile Modal -->
+<div id="editModal" class="modal" aria-hidden="true">
+  <div class="modal-content card" role="dialog" aria-modal="true" aria-labelledby="editProfileHeading">
+    <h2 id="editProfileHeading">Edit Profile</h2>
+    <div class="modal-profile-row">
+      <div class="modal-avatar-wrap">
+        <img loading="lazy" id="modalAvatarPreview" alt="Avatar preview" class="profile-avatar-img">
+        <div id="modalAvatarFallback" class="material-symbols-rounded modal-avatar-fallback">person</div>
+      </div>
+      <div class="modal-form-area">
+        <label class="small muted" for="usernameInput">Username</label>
+        <input id="usernameInput" type="text" placeholder="Enter username">
+
+        <label class="small muted" for="bioInput" style="margin-top: 12px; display: block;">Bio</label>
+        <textarea id="bioInput" rows="2" maxlength="220" placeholder="Write a short bio about yourself..." style="width:100%; margin-top:6px; border:1px solid var(--border); border-radius:8px; padding:8px 10px; background:var(--card); color:var(--text); resize:vertical; font-size:14px;"></textarea>
+
+        <div class="upload-avatar-area" style="margin-top: 12px;">
+          <label class="small muted">Profile Picture</label>
+          <div class="upload-row" style="margin-top: 6px;">
+            <input id="avatarFileInput" type="file" accept="image/*" style="display:none">
+            <button id="uploadAvatarBtn" type="button" class="btn small ghost" style="width: 100%; justify-content: center;">
+              <span class="material-symbols-rounded">upload</span> Upload Custom Photo
+            </button>
+          </div>
+        </div>
+
+        <div class="small muted avatar-help" style="margin-top: 12px;">Or choose a preset avatar</div>
+
+        <div id="avatarPicker" class="avatar-picker">
+          <img loading="lazy" src="assets/avatars/avatar1.png" class="avatar-option" alt="avatar option">
+          <img loading="lazy" src="assets/avatars/avatar2.png" class="avatar-option" alt="avatar option">
+          <img loading="lazy" src="assets/avatars/avatar3.png" class="avatar-option" alt="avatar option">
+          <img loading="lazy" src="assets/avatars/avatar4.png" class="avatar-option" alt="avatar option">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button id="closeModalBtn" class="btn small ghost" type="button">Cancel</button>
+      <button id="saveProfileBtn" class="btn small" type="button">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- Followers / Following List Modal -->
+<div id="socialListModal" class="modal" aria-hidden="true">
+  <div class="modal-content card" style="max-width: 460px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+      <h2 id="socialListTitle" style="font-size:20px; margin:0;">Followers</h2>
+      <button id="closeSocialListBtn" class="btn small ghost" type="button" style="padding:4px 8px;">✕</button>
+    </div>
+    <div id="socialListContent" class="compact-list" style="max-height:360px; overflow-y:auto;"></div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/user.js"></script>
+<script src="js/social.js"></script>
+<script src="js/xp.js"></script>
+<script src="js/achievements.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>
+

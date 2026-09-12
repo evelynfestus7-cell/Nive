@@ -1,0 +1,375 @@
+[
+  {
+    "id": "first-book",
+    "title": "First Book",
+    "description": "Finish your first story.",
+    "category": "Story",
+    "icon": "assets/icons/achievements/book.png",
+    "reward": { "xp": 50, "coins": 25, "badge": "Story Starter" }
+  },
+  {
+    "id": "bookworm",
+    "title": "Bookworm",
+    "description": "Read 5 stories.",
+    "category": "Story",
+    "icon": "assets/icons/achievements/bookworm.png",
+    "reward": { "xp": 120, "coins": 60, "badge": "Bookworm" }
+  },
+  {
+    "id": "library-legend",
+    "title": "Library Legend",
+    "description": "Read 10 stories.",
+    "category": "Story",
+    "icon": "assets/icons/achievements/bookworm.png",
+    "reward": { "xp": 250, "coins": 125, "badge": "Library Legend" }
+  },
+  {
+    "id": "chapter-starter",
+    "title": "Chapter Starter",
+    "description": "Read your first chapter.",
+    "category": "Reading",
+    "icon": "assets/icons/achievements/book.png",
+    "reward": { "xp": 20, "coins": 10, "badge": "Chapter Starter" }
+  },
+  {
+    "id": "chapter-sprinter",
+    "title": "Chapter Sprinter",
+    "description": "Read 10 chapters.",
+    "category": "Reading",
+    "icon": "assets/icons/achievements/explorer.png",
+    "reward": { "xp": 80, "coins": 40, "badge": "Sprinter" }
+  },
+  {
+    "id": "chapter-hero",
+    "title": "Chapter Hero",
+    "description": "Read 25 chapters.",
+    "category": "Reading",
+    "icon": "assets/icons/achievements/level.png",
+    "reward": { "xp": 180, "coins": 90, "badge": "Chapter Hero" }
+  },
+  {
+    "id": "page-turner",
+    "title": "Page Turner",
+    "description": "Read 50 pages.",
+    "category": "Reading",
+    "icon": "assets/icons/achievements/book.png",
+    "reward": { "xp": 70, "coins": 35, "badge": "Page Turner" }
+  },
+  {
+    "id": "page-master",
+    "title": "Page Master",
+    "description": "Read 250 pages.",
+    "category": "Reading",
+    "icon": "assets/icons/achievements/bookworm.png",
+    "reward": { "xp": 220, "coins": 110, "badge": "Page Master" }
+  },
+  {
+    "id": "marathon-reader",
+    "title": "Marathon Reader",
+    "description": "Spend 2 hours reading.",
+    "category": "Reading",
+    "icon": "assets/icons/achievements/level.png",
+    "reward": { "xp": 150, "coins": 75, "badge": "Marathon Reader" }
+  },
+  {
+    "id": "daily-spark",
+    "title": "Daily Spark",
+    "description": "Read a chapter today.",
+    "category": "Goal",
+    "icon": "assets/icons/achievements/explorer.png",
+    "reward": { "xp": 30, "coins": 15, "badge": "Daily Spark" }
+  },
+  {
+    "id": "three-day-streak",
+    "title": "Three-Day Flame",
+    "description": "Keep a 3-day reading streak.",
+    "category": "Goal",
+    "icon": "assets/icons/achievements/collector.png",
+    "reward": { "xp": 75, "coins": 35, "badge": "Three-Day Flame" }
+  },
+  {
+    "id": "weekly-goal",
+    "title": "Weekly Goal",
+    "description": "Read on 3 different days.",
+    "category": "Goal",
+    "icon": "assets/icons/achievements/explorer.png",
+    "reward": { "xp": 90, "coins": 45, "badge": "Weekly Finisher" }
+  },
+  {
+    "id": "streak-week",
+    "title": "Streak Week",
+    "description": "Keep a 7-day reading streak.",
+    "category": "Goal",
+    "icon": "assets/icons/achievements/collector.png",
+    "reward": { "xp": 175, "coins": 90, "badge": "Streak Week" }
+  },
+  {
+    "id": "monthly-goal",
+    "title": "Monthly Goal",
+    "description": "Read 100 pages.",
+    "category": "Goal",
+    "icon": "assets/icons/achievements/level.png",
+    "reward": { "xp": 130, "coins": 65, "badge": "Goal Crusher" }
+  },
+  {
+    "id": "level-5",
+    "title": "Level 5",
+    "description": "Reach Level 5.",
+    "category": "Level",
+    "icon": "assets/icons/achievements/level.png",
+    "reward": { "xp": 100, "coins": 50, "badge": "Rising Reader" }
+  },
+  {
+    "id": "level-10",
+    "title": "Level 10",
+    "description": "Reach Level 10.",
+    "category": "Level",
+    "icon": "assets/icons/achievements/level.png",
+    "reward": { "xp": 250, "coins": 150, "badge": "Elite Reader" }
+  },
+  {
+    "id": "first-favorite",
+    "title": "First Favorite",
+    "description": "Favorite your first story.",
+    "category": "Collection",
+    "icon": "assets/icons/achievements/collector.png",
+    "reward": { "xp": 25, "coins": 15, "badge": "Curator" }
+  },
+  {
+    "id": "collector",
+    "title": "Collector",
+    "description": "Favorite 3 stories.",
+    "category": "Collection",
+    "icon": "assets/icons/achievements/collector.png",
+    "reward": { "xp": 80, "coins": 40, "badge": "Collector" }
+  },
+  {
+    "id": "super-collector",
+    "title": "Super Collector",
+    "description": "Favorite 5 stories.",
+    "category": "Collection",
+    "icon": "assets/icons/achievements/collector.png",
+    "reward": { "xp": 140, "coins": 70, "badge": "Super Collector" }
+  },
+  {
+    "id": "first-bookmark",
+    "title": "First Bookmark",
+    "description": "Create your first bookmark.",
+    "category": "Collection",
+    "icon": "assets/icons/achievements/explorer.png",
+    "reward": { "xp": 25, "coins": 15, "badge": "Bookmark Keeper" }
+  },
+  {
+    "id": "explorer",
+    "title": "Explorer",
+    "description": "Create 3 bookmarks.",
+    "category": "Collection",
+    "icon": "assets/icons/achievements/explorer.png",
+    "reward": { "xp": 75, "coins": 35, "badge": "Explorer" }
+  },
+  {
+    "id": "map-maker",
+    "title": "Map Maker",
+    "description": "Create 10 bookmarks.",
+    "category": "Collection",
+    "icon": "assets/icons/achievements/explorer.png",
+    "reward": { "xp": 160, "coins": 80, "badge": "Map Maker" }
+  },
+  {
+    "id": "social-butterfly",
+    "title": "Social Butterfly",
+    "description": "Follow 3 readers in the community.",
+    "category": "Social",
+    "icon": "assets/icons/achievements/explorer.png",
+    "reward": { "xp": 60, "coins": 30, "badge": "Social Butterfly" }
+  },
+  {
+    "id": "generous-heart",
+    "title": "Generous Heart",
+    "description": "Share coins with another reader.",
+    "category": "Social",
+    "icon": "assets/icons/achievements/collector.png",
+    "reward": { "xp": 80, "coins": 40, "badge": "Generous Reader" }
+  },
+  {
+    "id": "commentator",
+    "title": "Voice of Nive",
+    "description": "Post your first chapter comment.",
+    "category": "Social",
+    "icon": "assets/icons/achievements/book.png",
+    "reward": { "xp": 40, "coins": 20, "badge": "Voice of Nive" }
+  },
+  {
+    "id": "discussion-leader",
+    "title": "Discussion Leader",
+    "description": "Post 5 chapter comments.",
+    "category": "Social",
+    "icon": "assets/icons/achievements/bookworm.png",
+    "reward": { "xp": 100, "coins": 50, "badge": "Discussion Leader" }
+  },
+  {
+    "id": "playlist-curator",
+    "title": "Playlist Curator",
+    "description": "Create a custom reading list.",
+    "category": "Collection",
+    "icon": "assets/icons/achievements/book.png",
+    "reward": { "xp": 75, "coins": 35, "badge": "Playlist Curator" }
+  },
+  {
+    "id": "coin-hoarder",
+    "title": "Treasure Chest",
+    "description": "Save up a balance of 500 coins.",
+    "category": "Collection",
+    "icon": "assets/icons/achievements/collector.png",
+    "reward": { "xp": 150, "coins": 75, "badge": "Treasure Keeper" }
+  },
+  {
+    "id": "night-owl",
+    "title": "Night Owl",
+    "description": "Read past midnight.",
+    "category": "Reading",
+    "icon": "assets/icons/achievements/level.png",
+    "reward": { "xp": 90, "coins": 45, "badge": "Night Owl" }
+  },
+  {
+    "id": "early-bird",
+    "title": "Early Bird",
+    "description": "Read before 8:00 AM.",
+    "category": "Reading",
+    "icon": "assets/icons/achievements/explorer.png",
+    "reward": { "xp": 90, "coins": 45, "badge": "Early Bird" }
+  },
+  {
+    "id": "speed-reader",
+    "title": "Velocity Reader",
+    "description": "Read 3 chapters in a single reading session.",
+    "category": "Reading",
+    "icon": "assets/icons/achievements/level.png",
+    "reward": { "xp": 110, "coins": 55, "badge": "Speed Demon" }
+  },
+  {
+    "id": "genre-explorer",
+    "title": "Genre Explorer",
+    "description": "Finish stories across 2 or more different genres.",
+    "category": "Story",
+    "icon": "assets/icons/achievements/book.png",
+    "reward": { "xp": 120, "coins": 60, "badge": "Polymath Reader" }
+  },
+  {
+    "id": "choice-master",
+    "title": "Pathfinder",
+    "description": "Read through 5 interactive chapter choices.",
+    "category": "Story",
+    "icon": "assets/icons/achievements/explorer.png",
+    "reward": { "xp": 100, "coins": 50, "badge": "Pathfinder" }
+  },
+  {
+    "id": "cliffhanger-survivor",
+    "title": "Cliffhanger Survivor",
+    "description": "Complete 2 mystery or thriller stories.",
+    "category": "Story",
+    "icon": "assets/icons/achievements/bookworm.png",
+    "reward": { "xp": 130, "coins": 65, "badge": "Survivor" }
+  },
+  {
+    "id": "romance-hopeless",
+    "title": "Hopeless Romantic",
+    "description": "Complete 3 romance stories.",
+    "category": "Story",
+    "icon": "assets/icons/achievements/collector.png",
+    "reward": { "xp": 100, "coins": 50, "badge": "Hopeless Romantic" }
+  },
+  {
+    "id": "sci-fi-pioneer",
+    "title": "Stargazer",
+    "description": "Complete 4 Sci-Fi stories.",
+    "category": "Story",
+    "icon": "assets/icons/achievements/level.png",
+    "reward": { "xp": 100, "coins": 50, "badge": "Stargazer" }
+  },
+  {
+    "id": "level-15",
+    "title": "Level 15 Reached",
+    "description": "Reach Level 15.",
+    "category": "Level",
+    "icon": "assets/icons/achievements/level.png",
+    "reward": { "xp": 300, "coins": 200, "badge": "Master Reader" }
+  },
+  {
+    "id": "level-20",
+    "title": "Level 20 Reached",
+    "description": "Reach Level 20.",
+    "category": "Level",
+    "icon": "assets/icons/achievements/level.png",
+    "reward": { "xp": 500, "coins": 350, "badge": "Nive Grandmaster" }
+  },
+  {
+    "id": "streak-14",
+    "title": "Two-Week Flame",
+    "description": "Keep a 14-day reading streak.",
+    "category": "Goal",
+    "icon": "assets/icons/achievements/collector.png",
+    "reward": { "xp": 250, "coins": 125, "badge": "Two-Week Flame" }
+  },
+  {
+    "id": "streak-30",
+    "title": "Monthly Legend",
+    "description": "Keep a 30-day reading streak.",
+    "category": "Goal",
+    "icon": "assets/icons/achievements/collector.png",
+    "reward": { "xp": 600, "coins": 300, "badge": "Monthly Legend" }
+  },
+  {
+    "id": "offline-reader",
+    "title": "Pocket Library",
+    "description": "Download 2 stories for offline reading.",
+    "category": "Collection",
+    "icon": "assets/icons/achievements/book.png",
+    "reward": { "xp": 80, "coins": 40, "badge": "Pocket Reader" }
+  },
+  {
+    "id": "nive-veteran",
+    "title": "Nive Veteran",
+    "description": "Read 20 stories.",
+    "category": "Story",
+    "icon": "assets/icons/achievements/bookworm.png",
+    "reward": { "xp": 400, "coins": 250, "badge": "Nive Veteran" }
+  },
+  {
+    "id": "new-year-reader",
+    "title": "New Year Reader",
+    "description": "Read during the January seasonal event.",
+    "category": "Seasonal",
+    "icon": "assets/icons/achievements/level.png",
+    "reward": { "xp": 100, "coins": 75, "badge": "New Year 2026" },
+    "season": "January"
+  },
+  {
+    "id": "summer-reader",
+    "title": "Summer Reader",
+    "description": "Read during the June-August seasonal event.",
+    "category": "Seasonal",
+    "icon": "assets/icons/achievements/bookworm.png",
+    "reward": { "xp": 100, "coins": 75, "badge": "Summer 2026" },
+    "season": "Summer"
+  },
+  {
+    "id": "spooky-pages",
+    "title": "Spooky Pages",
+    "description": "Read during the October seasonal event.",
+    "category": "Seasonal",
+    "icon": "assets/icons/achievements/explorer.png",
+    "reward": { "xp": 100, "coins": 75, "badge": "October 2026" },
+    "season": "October"
+  },
+  {
+    "id": "holiday-reader",
+    "title": "Holiday Reader",
+    "description": "Read during the December seasonal event.",
+    "category": "Seasonal",
+    "icon": "assets/icons/achievements/collector.png",
+    "reward": { "xp": 100, "coins": 75, "badge": "Holiday 2026" },
+    "season": "December"
+  }
+]
+

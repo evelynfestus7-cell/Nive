@@ -1,0 +1,127 @@
+/* =========================
+   ADMIN PAGES
+   - Dashboard, login, manage
+========================= */
+
+/* Dashboard layout */
+.admin-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.admin-header h1 {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+/* Stats row */
+.admin-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-1);
+}
+.stat-card:hover {
+  transform: scale(1.05);
+}
+.stat-card h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+}
+.stat-card p {
+  opacity: 0.7;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* Dashboard grid */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.admin-grid .card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: var(--shadow-1);
+}
+.admin-grid .card:hover {
+  transform: translateY(-5px);
+  background: var(--card-light);
+}
+.admin-grid .card span {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Logout */
+.admin-logout {
+  margin-top: 30px;
+  text-align: center;
+}
+.admin-logout button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.16s ease;
+}
+.admin-logout button:hover {
+  transform: translateY(-2px);
+}
+
+/* Admin login */
+.admin-login-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.admin-login-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  width: min(420px, 100%);
+  text-align: center;
+}
+.admin-login-card h1 {
+  margin-bottom: 20px;
+}
+.admin-login-card input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .admin-stats {
+    flex-direction: column;
+  }
+}

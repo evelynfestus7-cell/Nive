@@ -1,0 +1,49 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return signedIn() && request.auth.token.email == "evelynfestus7@gmail.com";
+    }
+
+    function isOwner(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function userCannotEscalateRole(userId) {
+      return isAdmin() ||
+        (
+          isOwner(userId) &&
+          !("role" in request.resource.data.diff(resource.data).affectedKeys()) &&
+          !("isAdmin" in request.resource.data.diff(resource.data).affectedKeys())
+        );
+    }
+
+    match /users/{userId} {
+      allow create: if isOwner(userId)
+        && (!("role" in request.resource.data) || request.resource.data.role == "reader")
+        && (!("isAdmin" in request.resource.data) || request.resource.data.isAdmin == false);
+      allow read: if isOwner(userId) || isAdmin();
+      allow update: if (isOwner(userId) || isAdmin()) && userCannotEscalateRole(userId);
+      allow delete: if isAdmin();
+    }
+
+    match /stories/{storyId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+
+      match /chapters/{chapterId} {
+        allow read: if true;
+        allow create, update, delete: if isAdmin();
+      }
+    }
+
+    match /appState/{docId} {
+      allow read, write: if isAdmin();
+    }
+  }
+}

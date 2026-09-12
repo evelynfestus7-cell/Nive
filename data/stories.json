@@ -1,0 +1,877 @@
+[
+    {
+        "id":  "ember-court",
+        "title":  "The Ember Court",
+        "description":  "An interactive fantasy story about a palace of fire-lit politics where a reluctant heir must decide whether mercy or power will save the realm.",
+        "author":  "Alaere Stone",
+        "genre":  "Fantasy",
+        "cover":  "assets/covers/ember-court.jpg",
+        "banner":  "assets/banners/ember-court-banner.jpg",
+        "rating":  4.9,
+        "premium":  false,
+        "featured":  true,
+        "createdAt":  1783378860000,
+        "characters":  [
+                           {
+                               "name":  "Nara",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Prince Vale",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "Lady Cinder",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in The Ember Court",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "neon-oracle",
+        "title":  "Neon Oracle",
+        "description":  "An interactive sci-fi story about a rain-soaked megacity where a courier starts receiving predictions from a machine that should not know her name.",
+        "author":  "Mika Raye",
+        "genre":  "Sci-Fi",
+        "cover":  "assets/covers/neon-oracle.jpg",
+        "banner":  "assets/banners/neon-oracle-banner.jpg",
+        "rating":  4.8,
+        "premium":  false,
+        "featured":  true,
+        "createdAt":  1783378920000,
+        "characters":  [
+                           {
+                               "name":  "Iris",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Juno",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Oracle",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Neon Oracle",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "moonlit-letters",
+        "title":  "Moonlit Letters",
+        "description":  "An interactive romance story about two strangers exchanging letters across time through a locked drawer in an old hotel.",
+        "author":  "Susan C",
+        "genre":  "Romance",
+        "cover":  "assets/covers/moonlit-letters.jpg",
+        "banner":  "assets/banners/moonlit-letters-banner.jpg",
+        "rating":  4.7,
+        "premium":  false,
+        "featured":  true,
+        "createdAt":  1783378980000,
+        "characters":  [
+                           {
+                               "name":  "Elena",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Tomas",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Missing Year",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Moonlit Letters",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "blackwater-signal",
+        "title":  "Blackwater Signal",
+        "description":  "An interactive thriller story about a coastal town where every radio turns on at midnight with the voice of someone presumed dead.",
+        "author":  "K. Aden",
+        "genre":  "Thriller",
+        "cover":  "assets/covers/blackwater-signal.jpg",
+        "banner":  "assets/banners/blackwater-signal-banner.jpg",
+        "rating":  4.8,
+        "premium":  true,
+        "featured":  true,
+        "createdAt":  1783379040000,
+        "characters":  [
+                           {
+                               "name":  "Maya",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Detective Oris",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Signal",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Blackwater Signal",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "garden-of-glass",
+        "title":  "Garden of Glass",
+        "description":  "An interactive mystery story about an abandoned botanical dome where each mirrored flower reflects a different version of the truth.",
+        "author":  "Lina Vale",
+        "genre":  "Mystery",
+        "cover":  "assets/covers/garden-of-glass.jpg",
+        "banner":  "assets/banners/garden-of-glass-banner.jpg",
+        "rating":  4.6,
+        "premium":  false,
+        "featured":  true,
+        "createdAt":  1783379100000,
+        "characters":  [
+                           {
+                               "name":  "Sage",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Dr. Ivo",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Curator",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Garden of Glass",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "ashes-of-aurelion",
+        "title":  "Ashes of Aurelion",
+        "description":  "An interactive fantasy story about a fallen dragon city whose last map burns brighter whenever a lie is spoken.",
+        "author":  "Tomi Grey",
+        "genre":  "Fantasy",
+        "cover":  "assets/covers/ashes-of-aurelion.jpg",
+        "banner":  "assets/banners/ashes-of-aurelion-banner.jpg",
+        "rating":  4.5,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783379160000,
+        "characters":  [
+                           {
+                               "name":  "Keza",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Rook",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "General Vask",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Ashes of Aurelion",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "velvet-alibi",
+        "title":  "The Velvet Alibi",
+        "description":  "An interactive mystery story about a jazz club murder where every witness tells the truth, but never in the right order.",
+        "author":  "Nora Blake",
+        "genre":  "Mystery",
+        "cover":  "assets/covers/velvet-alibi.jpg",
+        "banner":  "assets/banners/velvet-alibi-banner.jpg",
+        "rating":  4.4,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783379220000,
+        "characters":  [
+                           {
+                               "name":  "Dara",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Miles",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "Madam Vesper",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in The Velvet Alibi",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "starfall-academy",
+        "title":  "Starfall Academy",
+        "description":  "An interactive young adult story about a school for sky-mages where one student discovers the constellations are moving against them.",
+        "author":  "J. N. Morrow",
+        "genre":  "Young Adult",
+        "cover":  "assets/covers/starfall-academy.jpg",
+        "banner":  "assets/banners/starfall-academy-banner.jpg",
+        "rating":  4.3,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783379280000,
+        "characters":  [
+                           {
+                               "name":  "Tali",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Bex",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "Headmaster Sol",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Starfall Academy",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "last-train-elysium",
+        "title":  "Last Train to Elysium",
+        "description":  "An interactive sci-fi story about a luxury train crossing the rings of Saturn with one passenger who was never born.",
+        "author":  "Ada Cross",
+        "genre":  "Sci-Fi",
+        "cover":  "assets/covers/last-train-elysium.jpg",
+        "banner":  "assets/banners/last-train-elysium-banner.jpg",
+        "rating":  4.6,
+        "premium":  true,
+        "featured":  false,
+        "createdAt":  1783379340000,
+        "characters":  [
+                           {
+                               "name":  "Noa",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Captain Senn",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "Passenger Zero",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Last Train to Elysium",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "salt-and-roses",
+        "title":  "Salt and Roses",
+        "description":  "An interactive romance story about a chef and a florist rebuilding a seaside market after a storm slowly rebuild each other too.",
+        "author":  "Amara Quinn",
+        "genre":  "Romance",
+        "cover":  "assets/covers/salt-and-roses.jpg",
+        "banner":  "assets/banners/salt-and-roses-banner.jpg",
+        "rating":  4.2,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783379400000,
+        "characters":  [
+                           {
+                               "name":  "Mina",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Leo",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "Old Grief",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Salt and Roses",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "clockwork-saints",
+        "title":  "Clockwork Saints",
+        "description":  "An interactive steampunk story about a city of brass saints where a mechanic finds a prayer engine counting down to disaster.",
+        "author":  "Eben Hart",
+        "genre":  "Steampunk",
+        "cover":  "assets/covers/clockwork-saints.jpg",
+        "banner":  "assets/banners/clockwork-saints-banner.jpg",
+        "rating":  4.5,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783379460000,
+        "characters":  [
+                           {
+                               "name":  "Pax",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Sister Anni",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Brass Bishop",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Clockwork Saints",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "hollow-lane",
+        "title":  "Hollow Lane",
+        "description":  "An interactive horror story about a quiet street where the houses rearrange themselves whenever someone tells a secret.",
+        "author":  "Ife Vale",
+        "genre":  "Horror",
+        "cover":  "assets/covers/hollow-lane.jpg",
+        "banner":  "assets/banners/hollow-lane-banner.jpg",
+        "rating":  4.1,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783379520000,
+        "characters":  [
+                           {
+                               "name":  "Nell",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Owen",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "House Seven",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Hollow Lane",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "river-of-names",
+        "title":  "River of Names",
+        "description":  "An interactive historical story about an archivist following a river ledger that records names before their owners arrive.",
+        "author":  "M. Etuk",
+        "genre":  "Historical",
+        "cover":  "assets/covers/river-of-names.jpg",
+        "banner":  "assets/banners/river-of-names-banner.jpg",
+        "rating":  4.4,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783379580000,
+        "characters":  [
+                           {
+                               "name":  "Eka",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Samuel",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Registrar",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in River of Names",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "sable-witch",
+        "title":  "The Sable Witch",
+        "description":  "An interactive fantasy story about a witch without a shadow hired to steal one from a king who has too many.",
+        "author":  "Rina Moss",
+        "genre":  "Fantasy",
+        "cover":  "assets/covers/sable-witch.jpg",
+        "banner":  "assets/banners/sable-witch-banner.jpg",
+        "rating":  4.7,
+        "premium":  true,
+        "featured":  false,
+        "createdAt":  1783379640000,
+        "characters":  [
+                           {
+                               "name":  "Sable",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Finch",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "King Orven",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in The Sable Witch",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "diamond-protocol",
+        "title":  "Diamond Protocol",
+        "description":  "An interactive thriller story about a cybersecurity analyst discovering that a stolen diamond is actually a key to a sleeping satellite.",
+        "author":  "Cole Vance",
+        "genre":  "Thriller",
+        "cover":  "assets/covers/diamond-protocol.jpg",
+        "banner":  "assets/banners/diamond-protocol-banner.jpg",
+        "rating":  4.3,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783379700000,
+        "characters":  [
+                           {
+                               "name":  "Zed",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Alma",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "Glass",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Diamond Protocol",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "paper-sun",
+        "title":  "Paper Sun",
+        "description":  "An interactive drama story about a family-owned print shop fighting closure after an old poster predicts tomorrow\u0027s headline.",
+        "author":  "N. Aster",
+        "genre":  "Drama",
+        "cover":  "assets/covers/paper-sun.jpg",
+        "banner":  "assets/banners/paper-sun-banner.jpg",
+        "rating":  4,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783379760000,
+        "characters":  [
+                           {
+                               "name":  "Ima",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Bayo",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Deadline",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Paper Sun",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "widow-of-mars",
+        "title":  "Widow of Mars",
+        "description":  "An interactive sci-fi story about a terraformer on Mars receives messages from a spouse who died before the colony launched.",
+        "author":  "Esi North",
+        "genre":  "Sci-Fi",
+        "cover":  "assets/covers/widow-of-mars.jpg",
+        "banner":  "assets/banners/widow-of-mars-banner.jpg",
+        "rating":  4.5,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783379820000,
+        "characters":  [
+                           {
+                               "name":  "Rhea",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Unit Cal",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Red Silence",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Widow of Mars",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "blue-hour-cafe",
+        "title":  "The Blue Hour Cafe",
+        "description":  "An interactive romance story about a cafe that opens for exactly one hour each night to people who regret the same choice.",
+        "author":  "Harper Sol",
+        "genre":  "Romance",
+        "cover":  "assets/covers/blue-hour-cafe.jpg",
+        "banner":  "assets/banners/blue-hour-cafe-banner.jpg",
+        "rating":  4.1,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783379880000,
+        "characters":  [
+                           {
+                               "name":  "Nico",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Ari",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Last Order",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in The Blue Hour Cafe",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "bone-compass",
+        "title":  "The Bone Compass",
+        "description":  "An interactive adventure story about an explorer following a compass carved from bone that points toward what the heart avoids.",
+        "author":  "T. Wren",
+        "genre":  "Adventure",
+        "cover":  "assets/covers/bone-compass.jpg",
+        "banner":  "assets/banners/bone-compass-banner.jpg",
+        "rating":  4.4,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783379940000,
+        "characters":  [
+                           {
+                               "name":  "Tess",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Makoa",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Northless Crew",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in The Bone Compass",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "static-hearts",
+        "title":  "Static Hearts",
+        "description":  "An interactive sci-fi romance story about two astronauts separated by a time-delay learn the static between transmissions is answering back.",
+        "author":  "June Iro",
+        "genre":  "Sci-Fi Romance",
+        "cover":  "assets/covers/static-hearts.jpg",
+        "banner":  "assets/banners/static-hearts-banner.jpg",
+        "rating":  4.2,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783380000000,
+        "characters":  [
+                           {
+                               "name":  "Nova",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Ren",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Delay",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Static Hearts",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "citadel-under-rain",
+        "title":  "Citadel Under Rain",
+        "description":  "An interactive fantasy story about a floating citadel where rain falls upward and every drop contains a stolen memory.",
+        "author":  "P. Ekanem",
+        "genre":  "Fantasy",
+        "cover":  "assets/covers/citadel-under-rain.jpg",
+        "banner":  "assets/banners/citadel-under-rain-banner.jpg",
+        "rating":  4.6,
+        "premium":  true,
+        "featured":  false,
+        "createdAt":  1783380060000,
+        "characters":  [
+                           {
+                               "name":  "Ori",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Kite",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Rainwardens",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Citadel Under Rain",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "red-thread-market",
+        "title":  "Red Thread Market",
+        "description":  "An interactive mystery story about a night market where a red thread ties every buyer to the person they will betray.",
+        "author":  "Zara Moon",
+        "genre":  "Mystery",
+        "cover":  "assets/covers/red-thread-market.jpg",
+        "banner":  "assets/banners/red-thread-market-banner.jpg",
+        "rating":  4.3,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783380120000,
+        "characters":  [
+                           {
+                               "name":  "Ayo",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Mei",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Thread Seller",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Red Thread Market",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "winter-in-veloria",
+        "title":  "Winter in Veloria",
+        "description":  "An interactive fantasy story about a winter kingdom where warmth is illegal and one baker hides a living flame in her oven.",
+        "author":  "Celia Frost",
+        "genre":  "Fantasy",
+        "cover":  "assets/covers/winter-in-veloria.jpg",
+        "banner":  "assets/banners/winter-in-veloria-banner.jpg",
+        "rating":  4,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783380180000,
+        "characters":  [
+                           {
+                               "name":  "Liora",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Bram",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Frost Court",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Winter in Veloria",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "oracle-of-owls",
+        "title":  "Oracle of Owls",
+        "description":  "An interactive mystery story about a librarian translating owl calls that reveal which patron will vanish before dawn.",
+        "author":  "Dee Rowan",
+        "genre":  "Mystery",
+        "cover":  "assets/covers/oracle-of-owls.jpg",
+        "banner":  "assets/banners/oracle-of-owls-banner.jpg",
+        "rating":  4.2,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783380240000,
+        "characters":  [
+                           {
+                               "name":  "Tara",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Moss",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Night Index",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Oracle of Owls",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    },
+    {
+        "id":  "golden-hour-heist",
+        "title":  "Golden Hour Heist",
+        "description":  "An interactive adventure story about a crew planning a museum heist that can only happen in the seven minutes before sunset.",
+        "author":  "Remy Fox",
+        "genre":  "Adventure",
+        "cover":  "assets/covers/golden-hour-heist.jpg",
+        "banner":  "assets/banners/golden-hour-heist-banner.jpg",
+        "rating":  4.5,
+        "premium":  false,
+        "featured":  false,
+        "createdAt":  1783380300000,
+        "characters":  [
+                           {
+                               "name":  "Vera",
+                               "avatar":  "assets/avatars/avatar1.png",
+                               "role":  "Lead reader-perspective character"
+                           },
+                           {
+                               "name":  "Kit",
+                               "avatar":  "assets/avatars/avatar2.png",
+                               "role":  "Ally with a secret"
+                           },
+                           {
+                               "name":  "The Collector",
+                               "avatar":  "assets/avatars/avatar3.png",
+                               "role":  "Opposing force"
+                           }
+                       ],
+        "achievements":  [
+                             "Find the hidden clue in Golden Hour Heist",
+                             "Complete every branch",
+                             "Finish the final chapter"
+                         ]
+    }
+]
